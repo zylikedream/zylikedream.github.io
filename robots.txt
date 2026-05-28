@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zylikedream.gitee.io/sitemap.xml
+Sitemap: https://zylikedream.github.io/sitemap.xml

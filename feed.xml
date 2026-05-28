@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>梦想存储罐</title>
-    <link>https://zylikedream.gitee.io/</link>
+    <link>https://zylikedream.github.io/</link>
     <description>梦想存储罐</description>
     <language>zh-cn</language>
     <generator>Gridea Pro</generator>
     <lastBuildDate>Thu, 28 May 2026 11:02:21 +0800</lastBuildDate>
-    <atom:link href="https://zylikedream.gitee.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
+    <atom:link href="https://zylikedream.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <item>
       <title>ubuntu通过Kubeadmin部署K8s集群</title>
-      <link>https://zylikedream.gitee.io/post/ubuntu-tong-guo-kubeadmin-bu-shu-k8s-ji-qun/</link>
-      <guid isPermaLink="true">https://zylikedream.gitee.io/post/ubuntu-tong-guo-kubeadmin-bu-shu-k8s-ji-qun/</guid>
+      <link>https://zylikedream.github.io/post/ubuntu-tong-guo-kubeadmin-bu-shu-k8s-ji-qun/</link>
+      <guid isPermaLink="true">https://zylikedream.github.io/post/ubuntu-tong-guo-kubeadmin-bu-shu-k8s-ji-qun/</guid>
       <pubDate>Sat, 01 Aug 2020 12:43:46 +0800</pubDate>
       <description><![CDATA[<p>通过vmware虚拟机安装两个ubuntu系统，部署k8s集群。其中要把虚拟机的网卡模式要选择为<strong>桥接模式</strong>(默认为NAT)</p>
 <p>ubuntu版本:<br />
-<img src="https://zylikedream.gitee.io/post-images/1596257304653.png" alt="" /></p>
+<img src="https://zylikedream.github.io/post-images/1596257304653.png" alt="" /></p>
 <h2 id="swap">关闭SWAP内存</h2>
 <ol>
 <li>
 <p>k8s要求关闭电脑的<strong>swap</strong>内存，修改**/etc/fstab**文件， 注释掉红框内的两行:<br />
-<img src="https://zylikedream.gitee.io/post-images/1596257330123.png" alt="" /></p>
+<img src="https://zylikedream.github.io/post-images/1596257330123.png" alt="" /></p>
 </li>
 <li>
 <p>然后重启电脑reboot</p>
 </li>
 <li>
 <p>使用命令<strong>free -m</strong>查看虚拟内存, 可以看到swap内存已经为0了<br />
-<img src="https://zylikedream.gitee.io/post-images/1596257339805.png" alt="" /></p>
+<img src="https://zylikedream.github.io/post-images/1596257339805.png" alt="" /></p>
 </li>
 </ol>
 <h2 id="docker">安装和配置docker</h2>
@@ -40,7 +40,7 @@
 </li>
 <li>
 <p>docker -v 查看docker版本<br />
-<img src="https://zylikedream.gitee.io/post-images/1596257359808.png" alt="" /></p>
+<img src="https://zylikedream.github.io/post-images/1596257359808.png" alt="" /></p>
 </li>
 <li>
 <p>修改docker下载镜像为国内源，编辑**/etc/docker/daemon.json**:</p>
@@ -62,7 +62,7 @@
 </code></pre>
 </li>
 </ol>
-<p><img src="https://zylikedream.gitee.io/post-images/1596257378565.png" alt="" /></p>
+<p><img src="https://zylikedream.github.io/post-images/1596257378565.png" alt="" /></p>
 <ol start="6">
 <li>
 <p>重启docker</p>
@@ -73,7 +73,7 @@
 <p>查看cgroups的类型已经修改为了systemd</p>
 </li>
 </ol>
-<p><img src="https://zylikedream.gitee.io/post-images/1596257387106.png" alt="" /></p>
+<p><img src="https://zylikedream.github.io/post-images/1596257387106.png" alt="" /></p>
 <p>为了避免每次都要sudo才能执行docker的相关操作，可以把当前用户加入docker组里：</p>
 <pre><code class="language-c">sudo gpasswd -a ${USER} docker // 把当前用户加入docker用户组
 newgrp - docker // 用户组切换为docker
@@ -123,29 +123,29 @@ sudo kubeadm init --apiserver-advertise-address=192.168.1.6 --image-repository r
 </li>
 <li>
 <p>我们根据报错只能收到去docker.hub上去手动安装对应的docker镜像</p>
-<p><img src="https://zylikedream.gitee.io/post-images/1596257402335.png" alt="" /></p>
+<p><img src="https://zylikedream.github.io/post-images/1596257402335.png" alt="" /></p>
 <p>这儿以第一个错为例可以看到是拉取<code>kube-apiserver:v1.18.6</code>的版本出错了</p>
-<p><img src="https://zylikedream.gitee.io/post-images/1596257411815.png" alt="" /></p>
+<p><img src="https://zylikedream.github.io/post-images/1596257411815.png" alt="" /></p>
 <ul>
 <li>
 <p>我们去 <a href="https://hub.docker.com/">dockerhub</a>上搜索对应的镜像</p>
-<p><img src="https://zylikedream.gitee.io/post-images/1596257420461.png" alt="" /></p>
+<p><img src="https://zylikedream.github.io/post-images/1596257420461.png" alt="" /></p>
 </li>
 <li>
 <p>我们选择第二个，然后在其中找到对应版本的镜像</p>
-<p><img src="https://zylikedream.gitee.io/post-images/1596257427918.png" alt="" /></p>
+<p><img src="https://zylikedream.github.io/post-images/1596257427918.png" alt="" /></p>
 </li>
 <li>
 <p>复制镜像的下载地址：</p>
-<p><img src="https://zylikedream.gitee.io/post-images/1596257434983.png" alt="" /></p>
+<p><img src="https://zylikedream.github.io/post-images/1596257434983.png" alt="" /></p>
 </li>
 <li>
 <p>下载镜像：<br />
-<img src="https://zylikedream.gitee.io/post-images/1596257717962.png" alt="" /></p>
+<img src="https://zylikedream.github.io/post-images/1596257717962.png" alt="" /></p>
 </li>
 <li>
 <p>需要对下载镜像打<code>tag</code>，关联k8s需要的镜像名字<br />
-<img src="https://zylikedream.gitee.io/post-images/1596257457885.png" alt="" /></p>
+<img src="https://zylikedream.github.io/post-images/1596257457885.png" alt="" /></p>
 </li>
 </ul>
 </li>
@@ -157,7 +157,7 @@ sudo kubeadm init --apiserver-advertise-address=192.168.1.6 --image-repository r
 <p>如果出现了下面的字样就表示安装成功了：</p>
 </li>
 </ol>
-<p><img src="https://zylikedream.gitee.io/post-images/1596257471719.png" alt="" /></p>
+<p><img src="https://zylikedream.github.io/post-images/1596257471719.png" alt="" /></p>
 <p>红框中的<code>kubeadm join</code>指令需要复制下来，其他的节点加入集群时需要用到的指令，如果忘了就执行<code>kubeadm token create --print-join-command</code>重新生成一条。</p>
 <p>如果在安装中出现了任何错误，需要执行<code>sudo kubeadm reset</code>重置环境以后，再执行上面的<code>kubeadm init</code>指令</p>
 <h2 id="kubectl">配置kubectl工具</h2>
@@ -174,7 +174,7 @@ sudo chown -R `whoami`:`whoami` ~/.kube
 <pre><code>kubectl get nodes
 </code></pre>
 <p>如果能看到下面类似的结果就表示可以用了</p>
-<p><img src="https://zylikedream.gitee.io/post-images/1596257483621.png" alt="" /></p>
+<p><img src="https://zylikedream.github.io/post-images/1596257483621.png" alt="" /></p>
 </li>
 </ol>
 <h2 id="-flannel-">部署 flannel 网络</h2>
@@ -185,21 +185,21 @@ sudo chown -R `whoami`:`whoami` ~/.kube
 <ul>
 <li>
 <p>查询ip</p>
-<p><img src="https://zylikedream.gitee.io/post-images/1596257505307.png" alt="" /></p>
+<p><img src="https://zylikedream.github.io/post-images/1596257505307.png" alt="" /></p>
 </li>
 <li>
 <p>修改hosts文件，<code>sudo vim /etc/hosts</code>，添加查询到的ip地址</p>
-<p><img src="https://zylikedream.gitee.io/post-images/1596257514487.png" alt="" /></p>
+<p><img src="https://zylikedream.github.io/post-images/1596257514487.png" alt="" /></p>
 </li>
 </ul>
 <p>如果输出了下面类似的内容，则表示安装成功：</p>
-<p><img src="https://zylikedream.gitee.io/post-images/1596257523541.png" alt="" /></p>
+<p><img src="https://zylikedream.github.io/post-images/1596257523541.png" alt="" /></p>
 <p>至此<code>k8s的master</code>节点部署完成</p>
 <h2 id="worker">克隆一个worker的虚拟机</h2>
 <p>woker节点，也需要安装K8s和docker相关工具，为了方便我们之间从master虚拟机克隆一台来作为node（克隆前需要先关闭虚拟机）：</p>
-<p><img src="https://zylikedream.gitee.io/post-images/1596257531468.png" alt="" /></p>
+<p><img src="https://zylikedream.github.io/post-images/1596257531468.png" alt="" /></p>
 <p>需要注意克隆类型选择<code>完整克隆</code></p>
-<p><img src="https://zylikedream.gitee.io/post-images/1596257538388.png" alt="" /></p>
+<p><img src="https://zylikedream.github.io/post-images/1596257538388.png" alt="" /></p>
 <p>克隆成功后进入worker机器 由于master是设置的静态ip，克隆出来的虚拟机ip会有冲突，所以我们还需要修改ip地址。</p>
 <h2 id="-node-">将 node 节点加入网络</h2>
 <ol>
@@ -208,7 +208,7 @@ sudo chown -R `whoami`:`whoami` ~/.kube
 <pre><code class="language-c">sudo hostnamectl set-hostname node
 </code></pre>
 <p>再使用hostname查看改动是否生效：</p>
-<p><img src="https://zylikedream.gitee.io/post-images/1596257564842.png" alt="" /></p>
+<p><img src="https://zylikedream.github.io/post-images/1596257564842.png" alt="" /></p>
 </li>
 <li>
 <p>执行master节点生成的<code>kubeadm join</code>指令</p>
@@ -217,33 +217,33 @@ sudo chown -R `whoami`:`whoami` ~/.kube
 <p>注意不要直接复制，每个机器都会不一样。</p>
 <p>如果执行错误了，同样需要执行<code>kubeadm reset</code>重置，再重新执行命令</p>
 <p>如果出现了下面类似的输出，就表示成功了：</p>
-<p><img src="https://zylikedream.gitee.io/post-images/1596257584505.png" alt="" /></p>
+<p><img src="https://zylikedream.github.io/post-images/1596257584505.png" alt="" /></p>
 </li>
 <li>
 <p>回到master节点，执行<code>kubectl get nodes</code>查看节点情况，可以看出node已经加了节点：</p>
-<p><img src="https://zylikedream.gitee.io/post-images/1596257592759.png" alt="" /></p>
+<p><img src="https://zylikedream.github.io/post-images/1596257592759.png" alt="" /></p>
 </li>
 </ol>
 ]]></description>
       <category>ubuntu</category>
       <category>k8s</category>
       <category>docker</category>
-      <enclosure url="https://zylikedream.gitee.io/post-images/ubuntu-tong-guo-kubeadmin-bu-shu-k8s-ji-qun.jpg" length="0" type="image/jpeg"></enclosure>
+      <enclosure url="https://zylikedream.github.io/post-images/ubuntu-tong-guo-kubeadmin-bu-shu-k8s-ji-qun.jpg" length="0" type="image/jpeg"></enclosure>
     </item>
     <item>
       <title>使用代理加速github</title>
-      <link>https://zylikedream.gitee.io/post/shi-yong-dai-li-jia-su-github/</link>
-      <guid isPermaLink="true">https://zylikedream.gitee.io/post/shi-yong-dai-li-jia-su-github/</guid>
+      <link>https://zylikedream.github.io/post/shi-yong-dai-li-jia-su-github/</link>
+      <guid isPermaLink="true">https://zylikedream.github.io/post/shi-yong-dai-li-jia-su-github/</guid>
       <pubDate>Mon, 27 Jul 2020 22:55:38 +0800</pubDate>
       <description><![CDATA[<p>因为git默认是不使用系统的代理服务器，即使我们开了梯子，git下载依然很慢，所以需要一些额外配置。这儿我们以windows下的lantern为例</p>
 <h2 id="heading">查看代理服务器</h2>
 <ol>
 <li>打开lantern设置<br />
-<img src="https://zylikedream.gitee.io/post-images/1595861891781.png" alt="" /></li>
+<img src="https://zylikedream.github.io/post-images/1595861891781.png" alt="" /></li>
 <li>点击设置<br />
-<img src="https://zylikedream.gitee.io/post-images/1595861885372.png" alt="" /></li>
+<img src="https://zylikedream.github.io/post-images/1595861885372.png" alt="" /></li>
 <li>点击高级设置，查看代理服务器<br />
-<img src="https://zylikedream.gitee.io/post-images/1595861935756.png" alt="" /></li>
+<img src="https://zylikedream.github.io/post-images/1595861935756.png" alt="" /></li>
 </ol>
 <h2 id="githttp">git配置http代理</h2>
 <p>用于加速https形式的clone</p>
@@ -251,17 +251,17 @@ sudo chown -R `whoami`:`whoami` ~/.kube
 <li>
 <p>设置http代理 用于我们只有从github上clone时才会用到代理，从码云或者自己的git服务器时就不需要了，所以配置时加上域名</p>
 <p><strong>git config &ndash;global http.https://github.com.proxy http://127.0.0.1:51462</strong><br />
-<img src="https://zylikedream.gitee.io/post-images/1595862059482.png" alt="" /></p>
+<img src="https://zylikedream.github.io/post-images/1595862059482.png" alt="" /></p>
 </li>
 <li>
 <p>设置配置https代理</p>
 <p><strong>git config &ndash;global https.https://github.com.proxy http://127.0.0.1:51462</strong><br />
-<img src="https://zylikedream.gitee.io/post-images/1595862066655.png" alt="" /></p>
+<img src="https://zylikedream.github.io/post-images/1595862066655.png" alt="" /></p>
 </li>
 <li>
 <p>查看git 配置。 确认已生效</p>
 <p>**git config -l **<br />
-<img src="https://zylikedream.gitee.io/post-images/1595862097330.png" alt="" /></p>
+<img src="https://zylikedream.github.io/post-images/1595862097330.png" alt="" /></p>
 </li>
 <li>
 <p>取消配置。如果需要取消使用unset</p>
@@ -274,7 +274,7 @@ sudo chown -R `whoami`:`whoami` ~/.kube
 <ol>
 <li>
 <p>编辑配置文件 vim ~/.ssh/config<br />
-<img src="https://zylikedream.gitee.io/post-images/1595862117309.png" alt="" /></p>
+<img src="https://zylikedream.github.io/post-images/1595862117309.png" alt="" /></p>
 </li>
 <li>
 <p>增加一个github的配置段，为连接github.com时配置lantern的sockets代理</p>
@@ -285,25 +285,25 @@ sudo chown -R `whoami`:`whoami` ~/.kube
 </code></pre>
 </li>
 </ol>
-<p><img src="https://zylikedream.gitee.io/post-images/1595862125982.png" alt="" /></p>
+<p><img src="https://zylikedream.github.io/post-images/1595862125982.png" alt="" /></p>
 <h2 id="linux">linux下的配置</h2>
 <p>linux下配置整体和上面windows的相同，只是ssh代理里的<code>ProxyCommand connect -S 127.0.0.1:51463 %h %p</code>需要修改为<code>ProxyCommand nc -v -x 127.0.0.1:51463 %h %p</code></p>
 <h2 id="heading-1">其他梯子</h2>
 <p>如果使用的是其他梯子原理也相同，只需要找到梯子的代理服务器地址即可</p>
 ]]></description>
       <category>github</category>
-      <enclosure url="https://zylikedream.gitee.io/post-images/shi-yong-dai-li-jia-su-github.jpg" length="0" type="image/jpeg"></enclosure>
+      <enclosure url="https://zylikedream.github.io/post-images/shi-yong-dai-li-jia-su-github.jpg" length="0" type="image/jpeg"></enclosure>
     </item>
     <item>
       <title>C语言结构体对齐</title>
-      <link>https://zylikedream.gitee.io/post/c-yu-yan-jie-gou-ti-dui-qi/</link>
-      <guid isPermaLink="true">https://zylikedream.gitee.io/post/c-yu-yan-jie-gou-ti-dui-qi/</guid>
+      <link>https://zylikedream.github.io/post/c-yu-yan-jie-gou-ti-dui-qi/</link>
+      <guid isPermaLink="true">https://zylikedream.github.io/post/c-yu-yan-jie-gou-ti-dui-qi/</guid>
       <pubDate>Mon, 27 Jul 2020 21:23:59 +0800</pubDate>
       <description><![CDATA[<h1 id="heading">结构体内存对齐</h1>
 <ol>
 <li>
 <p>结构体对齐是为了提高CPU读取内存效率，防止一个数据放在两个8自己内存块中。无论是否对齐，x86-64都能正确工作。对齐的基本原则是<strong>K字节类型对象的对象起始地址必须是K的倍数</strong>：<br />
-<img src="https://zylikedream.gitee.io/post-images/1595856553524.png" alt="" /></p>
+<img src="https://zylikedream.github.io/post-images/1595856553524.png" alt="" /></p>
 </li>
 <li>
 <p>编译器需要在结构体中插入一些空隙来保证对齐，考虑下面的结构体:</p>
@@ -375,16 +375,16 @@ struct sc ac[N];
 } s;
 </code></pre>
 <p>假设结构体<code>s</code>的其实地址为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>S</mi></msub></mrow><annotation encoding="application/x-tex">X_S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0785em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0576em;">S</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>如果让画出内存布局，我相信第一反应(包括很多网上的文章)都是像下面那样：</p>
-<p><img src="https://zylikedream.gitee.io/post-images/1595856599210.png" alt="" /></p>
+<p><img src="https://zylikedream.github.io/post-images/1595856599210.png" alt="" /></p>
 <p>但是上述布局都是默认内存的起始地址是0或者4的倍数。但是按照我们之前的推到，只是要求<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>S</mi></msub></mrow><annotation encoding="application/x-tex">X_S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0785em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0576em;">S</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>是第一个成员<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0715em;">K</span></span></span></span>的整数倍（第一个元素位<code>char</code>，K值为1），或者<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>S</mi></msub><mo>+</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">X_S+N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0785em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0576em;">S</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span></span></span></span>是第n个成员<code>xn</code>的<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">K_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0715em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>的整数倍即可，没有要求<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>S</mi></msub></mrow><annotation encoding="application/x-tex">X_S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0785em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0576em;">S</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>是<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">K_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0715em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>的整数倍，如果起始地址是3呢？那么内存布局是怎么样了，按照前面的规则，<code>&amp;s.b</code>的地址刚好是4，所以不用补齐，此时结构体的大小是5，但是还必须是成员的最大<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0715em;">K</span></span></span></span>值(对于struct St为4)的整数倍,所以结构体大小必须为8， 也就是需要早尾部填充3个字节，按照这个推出内存布局如下：</p>
 </li>
 </ol>
-<p><img src="https://zylikedream.gitee.io/post-images/1595856612682.png" alt="" /></p>
+<p><img src="https://zylikedream.github.io/post-images/1595856612682.png" alt="" /></p>
 <p>这种布局一样满足所有的规则。但是经过实际的测试发现<strong>编译器位结构体首地址分配的是结构体最大<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0715em;">K</span></span></span></span>值的整数倍</strong>（比结构体<code>struct St</code>的首地址就是4的倍数），也就是实际上确实第一种内存布局方式（但是暂时还不清楚原因是什么，也没有google到)。</p>
 <p>当起始地址为1的时候也是同理，就不推导了:</p>
-<p><img src="https://zylikedream.gitee.io/post-images/1595856625719.png" alt="" /></p>
+<p><img src="https://zylikedream.github.io/post-images/1595856625719.png" alt="" /></p>
 <p>当起始地址为2的时候：</p>
-<p><img src="https://zylikedream.gitee.io/post-images/1595856633050.png" alt="" /></p>
+<p><img src="https://zylikedream.github.io/post-images/1595856633050.png" alt="" /></p>
 <p>可以看到如果任由起始地址任意的话，可以看到有4种可能，如果把<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mi>n</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">int</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">in</span><span class="mord mathnormal">t</span></span></span></span>替换成<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>o</mi><mi>n</mi><mi>g</mi></mrow><annotation encoding="application/x-tex">long</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.0197em;">l</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mord mathnormal" style="margin-right:0.0359em;">g</span></span></span></span>就会有8种情况，所以可能是为了统一，才规定首地址必须是最大成员<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0715em;">K</span></span></span></span>值的倍数把。</p>
 <ol>
 <li>
@@ -444,7 +444,7 @@ struct S {
 </ol>
 ]]></description>
       <category>C</category>
-      <enclosure url="https://zylikedream.gitee.io/post-images/c-yu-yan-jie-gou-ti-dui-qi.jpg" length="0" type="image/jpeg"></enclosure>
+      <enclosure url="https://zylikedream.github.io/post-images/c-yu-yan-jie-gou-ti-dui-qi.jpg" length="0" type="image/jpeg"></enclosure>
     </item>
   </channel>
 </rss>
