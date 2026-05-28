@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zyrjm.xyz/sitemap.xml
+Sitemap: https://zylikedream.gitee.io/sitemap.xml
