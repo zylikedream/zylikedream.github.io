@@ -1,674 +1,23 @@
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content="Gridea Pro 1.2.1">
+<title>ubuntu通过Kubeadmin部署K8s集群 | 梦想存储罐</title>
+<link rel="shortcut icon" href="/favicon.ico?v=1779942236">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="ubuntu通过Kubeadmin部署K8s集群 | 梦想存储罐 - Atom Feed" href="/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
     <meta name="description" content="" />
     <meta name="keywords" content="ubuntu,k8s,docker" />
-    <link rel="stylesheet" href="/media/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/styles/main.css">
-    
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/dracula.min.css">
-              
-    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
-    <script src="/media/js/clipboard.min.js"></script>
-    <link rel="stylesheet" href="/media/css/live2d.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
-    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
-    <!-- 数学公式 -->
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.css"
-        integrity="sha384-9tPv11A+glH/on/wEu99NVwDPwkMQESOocs/ZGXPoIiLE8MU/qkqUcZ3zzL+6DuH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.js"
-        integrity="sha384-U8Vrjwb8fuHMt6ewaCy8uqeUXv4oitYACKdB0VziCerzt011iQ/0TqlSlv8MReCm" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/contrib/auto-render.min.js"
-        integrity="sha384-aGfk5kvhIq5x1x5YdvCp4upKZYnA8ckafviDpmWEKp4afOZEqOli7gqSnh8I6enH" crossorigin="anonymous">
-    </script>
-    <script>
-        renderMathInElement(document.body, {
-            delimiters: [{
-                    left: "$$",
-                    right: "$$",
-                    display: true
-                },
-                {
-                    left: "$",
-                    right: "$",
-                    display: false
-                }
-            ]
-        });
-    </script>
-
-    
-    <meta name="generator" content="Gridea Pro 1.2.1">
-    <title>梦想存储罐</title>
-    
-    <style>
-        .markdownIt-TOC {
-            margin-left: 28%;
-            padding-left: 2px;
-            width: 80%;
-        }
-        .markdownIt-TOC li{
-            padding-left: 8%;
-        }
-
-    </style>
-    
-</head>
-
-<body>
-    <!-- 响应式布局，针对PC端内容显示 -->
-    <div id="content">
-        <div class="nav-large">
-            <div class="row">
-                <div class="side"><head>
-    <meta name="description" content="梦想存储罐" />
-    <link rel="stylesheet" href="/media/css/bootstrap.min.css">
-</head>
-
-
-<body>
-    
-    <div id=side>
-        <div class="avatar-border">
-            <img src="/images/avatar.png?v=1779940846" class="avatar">
-        </div>
-        <div class="sitename">梦想存储罐</div>
-        <span class="describtion" data-text='["梦想存储罐"]'>&nbsp;</span>
-        
-        <div class="search">
-            <!-- <input type="text" class="search-input" placeholder="标题搜索(●'◡'●)" /> -->
-            <input type="text" class="search-input" placeholder="标题搜索 ⚆_⚆ つ♡">
-            <div class="search-results"></div>
-        </div>
-        
-    <div class="share-button">
-        <span>社交按钮</span>
-        
-        
-        
-        
-        
-        
-    </div>
-    <div id="qq" style="display:none"></div>
-    
-    
-    <div class="mchocie describtion">
-        <a href="/" class="menubutton">
-            首页
-        </a>
-    </div>
-    
-    
-    
-    <div class="mchocie describtion">
-        <a href="/archives" class="menubutton">
-            归档
-        </a>
-    </div>
-    
-    
-    
-    <div class="mchocie describtion">
-        <a href="/tags" class="menubutton">
-            标签
-        </a>
-    </div>
-    
-    
-    
-    <div class="mchocie describtion">
-        <a href="/post/about" class="menubutton">
-            关于
-        </a>
-    </div>
-    
-    
-    
-    
-    <div class="mchocie describtion">
-        <a href="/friends" class="menubutton">友人帐</a>
-    </div>
-    
-    <hr>
-    <div id="footinfo">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | Theme: <a
-        href="https://github.com/850552586/gridea-theme-fog">Fog</a></div>
-    
-    <div id="sitegotimeDate">载入天数...</div>
-    <div id="sitegotimes">载入时分秒...</div>
-    <div id="cussitetime" style="display:none">02/02/2020</div>
-    
-    
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <div id="vistornum">
-        <span id="busuanzi_container_site_uv">
-            🎈总访问量:<span id="busuanzi_value_site_pv"></span>&nbsp;&nbsp;|&nbsp;&nbsp;
-            🙍‍访问人数:<span id="busuanzi_value_site_uv"></span>
-        </span>
-    </div>
-    <div style="color:white">Copyright © 2020  备案号: 鄂ICP备...号</div>
-    
-    </div>
-
-
-<script src="/media/js/wordshow.js"></script>
-    
-    <script>
-        //----------------------站点运行时间
-        var now = new Date();
-
-        function createtime() {
-            var sitegotime = document.getElementById("cussitetime").innerHTML + " 00:00:00";
-            var grt = new Date(sitegotime); //此处修改你的建站时间或者网站上线时间 
-            now.setTime(now.getTime() + 250);
-            days = (now - grt) / 1000 / 60 / 60 / 24;
-            dnum = Math.floor(days);
-            hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
-            hnum = Math.floor(hours);
-            if (String(hnum).length == 1) {
-                hnum = "0" + hnum;
-            }
-            minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
-            mnum = Math.floor(minutes);
-            if (String(mnum).length == 1) {
-                mnum = "0" + mnum;
-            }
-            seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-            snum = Math.round(seconds);
-            if (String(snum).length == 1) {
-                snum = "0" + snum;
-            }
-            document.getElementById("sitegotimeDate").innerHTML = "本站已安全运行 " + dnum + " 天 ";
-            document.getElementById("sitegotimes").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
-        }
-        setInterval("createtime()", 250);
-    </script>
-    
-
-
-
-
-    
-</body>
-<script>
-    //-------------------------------------------------搜索
-    // 获取搜索框、搜索按钮、清空搜索、结果输出对应的元素
-    var searchInput = document.querySelector('.search-input');
-    var searchResults = document.querySelector('.search-results');
-
-    // 申明保存文章的标题、链接、内容的数组变量
-    var searchValue = '',
-        arrItems = [],
-        arrLinks = [],
-        arrTitles = [],
-        arrResults = [],
-        indexItem = [],
-        itemLength = 0;
-    var tmpDiv = document.createElement('div');
-    tmpDiv.className = 'result-item';
-
-    // ajax 的兼容写法
-    var xhr = new XMLHttpRequest() || new ActiveXObject('Microsoft.XMLHTTP');
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            xml = xhr.responseXML;
-            arrItems = xml.getElementsByTagName('entry');
-            itemLength = arrItems.length;
-            // 遍历并保存所有文章对应的标题、链接、内容到对应的数组中
-            // 同时过滤掉 HTML 标签
-            for (i = 0; i < itemLength; i++) {
-                var link = arrItems[i].getElementsByTagName('link')[0];
-                arrLinks[i] = link.getAttribute("href");
-                arrTitles[i] = arrItems[i].getElementsByTagName('title')[0].
-                childNodes[0].nodeValue.replace(/<.*?>/g, '');
-            }
-        }
-    }
-
-    // 开始获取根目录下 feed.xml 文件内的数据
-    xhr.open('get', '/atom.xml', true);
-    xhr.send();
-
-
-
-    // 输入框内容变化后就开始匹配，可以不用点按钮
-    // 经测试，onkeydown, onchange 等方法效果不太理想，
-    // 存在输入延迟等问题，最后发现触发 input 事件最理想，
-    // 并且可以处理中文输入法拼写的变化
-    searchInput.oninput = function () {
-        setTimeout(searchConfirm, 0);
-    }
-    searchInput.onfocus = function () {
-        searchResults.style.display = 'block';
-    }
-
-    function searchConfirm() {
-        if (searchInput.value == '') {
-            searchResults.style.display = 'none';
-        } else if (searchInput.value.search(/^\s+$/) >= 0) {
-            // 检测输入值全是空白的情况
-            searchInit();
-            var itemDiv = tmpDiv.cloneNode(true);
-            itemDiv.innerText = '请输入有效内容...';
-            searchResults.appendChild(itemDiv);
-        } else {
-            // 合法输入值的情况
-            searchInit();
-            searchValue = searchInput.value;
-            // 在标题、内容中查找
-            searchMatching(arrTitles, searchValue);
-        }
-    }
-
-    // 每次搜索完成后的初始化
-    function searchInit() {
-        arrResults = [];
-        indexItem = [];
-        searchResults.innerHTML = '';
-        searchResults.style.display = 'block';
-    }
-
-    function searchMatching(arr1, input) {
-        // 忽略输入大小写
-        input = new RegExp(input, 'i');
-        // 在所有文章标题、内容中匹配查询值
-        for (i = 0; i < itemLength; i++) {
-            if (arr1[i].search(input) !== -1) {
-                var arr = arr1;
-                indexItem.push(i); // 保存匹配值的索引
-                var indexContent = arr[i].search(input);
-                // 此时 input 为 RegExp 格式 /input/i，转换为原 input 字符串长度
-                var l = input.toString().length - 3;
-                var step = 10;
-
-                // 将匹配到内容的地方进行黄色标记，并包括周围一定数量的文本
-                arrResults.push(arr[i].slice(indexContent - step, indexContent));
-            }
-        }
-
-        // 输出总共匹配到的数目
-        var totalDiv = tmpDiv.cloneNode(true);
-        totalDiv.innerHTML = '<b>总匹配：' + indexItem.length + ' 项<hr></b>';
-        searchResults.appendChild(totalDiv);
-
-        // 未匹配到内容的情况
-        if (indexItem.length == 0) {
-            var itemDiv = tmpDiv.cloneNode(true);
-            itemDiv.innerText = '未匹配到内容...';
-            searchResults.appendChild(itemDiv);
-        }
-
-        // 将所有匹配内容进行组合
-        for (i = 0; i < arrResults.length; i++) {
-            var itemDiv = tmpDiv.cloneNode(true);
-            itemDiv.innerHTML = '<b>[' + arrTitles[indexItem[i]] +
-                ']</b><p>' + arrResults[i] + "</p><hr />";
-            itemDiv.setAttribute('onclick', 'changeHref(arrLinks[indexItem[' + i + ']])');
-            searchResults.appendChild(itemDiv);
-        }
-    }
-
-    function changeHref(href) {
-        location.href = href;
-    }
-
-    function showqq() {
-        var qq = document.getElementById("qq").innerHTML;
-        if (qq != '')
-            alert("博主的QQ联系方式为：" + qq);
-        else
-            alert("博主暂未设置QQ联系方式");
-    }
-</script></div>
-    
-    <div id="tab1" class="tab">
-        <div class="bars">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="close"></div>
-    </div>
-    <div id="main" class="col-xs-12 col-sm-7">
-        <link rel="stylesheet" href="/media/css/font-awesome.css">
-<style>
-
-</style>
-
-<body>
-    <div class="allcontent" id="postdetail">
-        <div class="postshow">
-            
-            <div class="postdetailimg" style="width:100%;overflow: hidden;display: none">
-                <img src="/post-images/ubuntu-tong-guo-kubeadmin-bu-shu-k8s-ji-qun.jpg" class="postimage" style="cursor:auto">
-            </div>
-            <div class="postinfo-detail">
-                <div class="postdate"><i class="fa fa-calendar"></i>2020-08-01</div>
-                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 9 分钟阅读</div>
-                <div class="posttag">
-                    
-                    <a href="/tag/dl1tDxbM1/" class="postlink">
-                        <i class="fa fa-tag"></i> ubuntu
-                    </a>
-                    
-                    <a href="/tag/xzK2l-mvU/" class="postlink">
-                        <i class="fa fa-tag"></i> k8s
-                    </a>
-                    
-                    <a href="/tag/-6xFciZl1/" class="postlink">
-                        <i class="fa fa-tag"></i> docker
-                    </a>
-                    
-                </div>
-            </div>
-            
-        <div id="texttitle" style="text-align: center">
-            <h2>ubuntu通过Kubeadmin部署K8s集群</h2>
-            <!-- id 将作为查询条件 -->
-            <div id="pl" style="display:none">/post/ubuntu-tong-guo-kubeadmin-bu-shu-k8s-ji-qun/</div>
-            <div id="rootaddr" style="display:none">https://zylikedream.github.io</div>
-            <span id="hotnum" class="leancloud_visitors" data-flag-title="ubuntu通过Kubeadmin部署K8s集群">
-                <h4 class="readercount">热度🔥: <i class="leancloud-visitors-count">loading...</i></h4>
-            </span>
-        </div>
-        <div class="text ">
-            <p>通过vmware虚拟机安装两个ubuntu系统，部署k8s集群。其中要把虚拟机的网卡模式要选择为<strong>桥接模式</strong>(默认为NAT)</p>
-<p>ubuntu版本:<br />
-<img src="/post-images/1596257304653.png" alt="" /></p>
-<h2 id="swap">关闭SWAP内存</h2>
-<ol>
-<li>
-<p>k8s要求关闭电脑的<strong>swap</strong>内存，修改**/etc/fstab**文件， 注释掉红框内的两行:<br />
-<img src="/post-images/1596257330123.png" alt="" /></p>
-</li>
-<li>
-<p>然后重启电脑reboot</p>
-</li>
-<li>
-<p>使用命令<strong>free -m</strong>查看虚拟内存, 可以看到swap内存已经为0了<br />
-<img src="/post-images/1596257339805.png" alt="" /></p>
-</li>
-</ol>
-<h2 id="docker">安装和配置docker</h2>
-<ol>
-<li>
-<p>安装docker：<code>sudo apt install docker.io</code></p>
-</li>
-<li>
-<p>设置开机运行docker: <code>systemctl enable docker.service</code></p>
-</li>
-<li>
-<p>docker -v 查看docker版本<br />
-<img src="/post-images/1596257359808.png" alt="" /></p>
-</li>
-<li>
-<p>修改docker下载镜像为国内源，编辑**/etc/docker/daemon.json**:</p>
-<pre><code class="language-c">sudo vim /etc/docker/daemon.json
-</code></pre>
-<p>​	打开后输出以下内容：</p>
-<pre><code class="language-c">{
-  &quot;registry-mirrors&quot;: [
-    &quot;https://dockerhub.azk8s.cn&quot;,
-    &quot;https://reg-mirror.qiniu.com&quot;,
-    &quot;https://quay-mirror.qiniu.com&quot;
-  ],
-}
-</code></pre>
-</li>
-<li>
-<p>修改cgroups。docker用它来实现容器的隔离，cgroups是docker默认使用的方式，而k8s使用的隔离工具是systemd,如果两个隔离的方式不同的话可能引起异常，所以芭doker的也修改为systemd，在此编辑**/etc/docker/daemon.json**，添加如下内容</p>
-<pre><code>&quot;exec-opts&quot;: [&quot;native.cgroupdriver=systemd&quot;]
-</code></pre>
-</li>
-</ol>
-<p><img src="/post-images/1596257378565.png" alt="" /></p>
-<ol start="6">
-<li>
-<p>重启docker</p>
-<pre><code class="language-c">sudo service docker restart
-</code></pre>
-</li>
-<li>
-<p>查看cgroups的类型已经修改为了systemd</p>
-</li>
-</ol>
-<p><img src="/post-images/1596257387106.png" alt="" /></p>
-<p>为了避免每次都要sudo才能执行docker的相关操作，可以把当前用户加入docker组里：</p>
-<pre><code class="language-c">sudo gpasswd -a ${USER} docker // 把当前用户加入docker用户组
-newgrp - docker // 用户组切换为docker
-</code></pre>
-<p>之后就可以直接执行docker的相关操作了</p>
-<h2 id="k8s">安装k8s</h2>
-<p><a href="https://hub.docker.com/">安装</a>k8s主要是安装三个主要组件<code>kubelet</code>、<code>kubeadm</code>以及<code>kubectl</code>：</p>
-<ul>
-<li><code>kubelet</code>：k8s的核心服务</li>
-<li><code>kubeadm</code>:   这个是用于快速安装 k8s 的一个集成工具，我们在<code>master1</code>和<code>worker1</code>上的 k8s 部署都将使用它来完成</li>
-<li><code>kubectl</code>: k8s 的命令行工具，与k8s的交互都是通过它来完成</li>
-</ul>
-<p>由于某些原因，，它们的下载地址不存在了。所以我们需要用国内的镜像站来下载，也很简单，依次执行下面五条命令即可。</p>
-<pre><code class="language-c"># 使得 apt 支持 ssl 传输
-sudo apt install -y apt-transport-https
-# 下载 gpg 密钥
-curl https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add - 
-# 添加 k8s 镜像源
-sudo bash -c 'cat &lt;&lt;EOF &gt;/etc/apt/sources.list.d/kubernetes.list
-	deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main
-	EOF'
-# 更新源列表
-sudo apt update
-# 下载 kubectl，kubeadm以及 kubelet
-sudo apt install -y kubelet kubeadm kubectl
-</code></pre>
-<h2 id="master">配置master节点</h2>
-<ol>
-<li>
-<p>修改master的ip为<code>静态ip</code></p>
-</li>
-<li>
-<p>使用<code>kubeadm init</code>命令初始化master节点：</p>
-<pre><code class="language-c"># --apiserver-advertise-address对应的ip地址需要修改自己机器的地址
-sudo kubeadm init --apiserver-advertise-address=192.168.1.6 --image-repository registry.aliyuncs.com/google_containers \
---pod-network-cidr=10.244.0.0/16 
-</code></pre>
-<p>说明一下各个参数的含义：</p>
-<ul>
-<li><code>--apiserver-advertise-address</code>: k8s 中的主要服务<code>apiserver</code>的部署地址，填自己的管理节点 ip</li>
-<li><code>--image-repository</code>: 拉取的 docker 镜像源，因为初始化的时候<code>kubeadm</code>会去拉 k8s 的很多组件来进行部署，所以需要指定国内镜像源，下不然会拉取不到镜像。</li>
-<li><code>-pod-network-cidr</code>: 这个是 k8s 采用的节点网络，因为我们将要使用<code>flannel</code>作为 k8s 的网络，所以这里填<code>10.244.0.0/16</code>就好</li>
-</ul>
-</li>
-<li>
-<p>虽然配置了image-repository，但是依然会发现报无法拉取镜像的错误。</p>
-</li>
-<li>
-<p>我们根据报错只能收到去docker.hub上去手动安装对应的docker镜像</p>
-<p><img src="/post-images/1596257402335.png" alt="" /></p>
-<p>这儿以第一个错为例可以看到是拉取<code>kube-apiserver:v1.18.6</code>的版本出错了</p>
-<p><img src="/post-images/1596257411815.png" alt="" /></p>
-<ul>
-<li>
-<p>我们去 <a href="https://hub.docker.com/">dockerhub</a>上搜索对应的镜像</p>
-<p><img src="/post-images/1596257420461.png" alt="" /></p>
-</li>
-<li>
-<p>我们选择第二个，然后在其中找到对应版本的镜像</p>
-<p><img src="/post-images/1596257427918.png" alt="" /></p>
-</li>
-<li>
-<p>复制镜像的下载地址：</p>
-<p><img src="/post-images/1596257434983.png" alt="" /></p>
-</li>
-<li>
-<p>下载镜像：<br />
-<img src="/post-images/1596257717962.png" alt="" /></p>
-</li>
-<li>
-<p>需要对下载镜像打<code>tag</code>，关联k8s需要的镜像名字<br />
-<img src="/post-images/1596257457885.png" alt="" /></p>
-</li>
-</ul>
-</li>
-<li>
-<p>对所有报错的镜像，执行同样的操作。执行<code>sudo kubeadm reset</code>重置环境，再重新执行<code>kubeadm Init</code>即可:</p>
-<pre><code class="language-c">sudo kubeadm init --apiserver-advertise-address=192.168.1.6 --image-repository registry.aliyuncs.com/google_containers \
---pod-network-cidr=10.244.0.0/16 
-</code></pre>
-<p>如果出现了下面的字样就表示安装成功了：</p>
-</li>
-</ol>
-<p><img src="/post-images/1596257471719.png" alt="" /></p>
-<p>红框中的<code>kubeadm join</code>指令需要复制下来，其他的节点加入集群时需要用到的指令，如果忘了就执行<code>kubeadm token create --print-join-command</code>重新生成一条。</p>
-<p>如果在安装中出现了任何错误，需要执行<code>sudo kubeadm reset</code>重置环境以后，再执行上面的<code>kubeadm init</code>指令</p>
-<h2 id="kubectl">配置kubectl工具</h2>
-<ol>
-<li>
-<p>执行下面的命令</p>
-<pre><code>mkdir -p ~/.kube
-sudo cp /etc/kubernetes/admin.conf ~/.kube/config
-sudo chown -R `whoami`:`whoami` ~/.kube 
-</code></pre>
-</li>
-<li>
-<p>测试是否可用：</p>
-<pre><code>kubectl get nodes
-</code></pre>
-<p>如果能看到下面类似的结果就表示可以用了</p>
-<p><img src="/post-images/1596257483621.png" alt="" /></p>
-</li>
-</ol>
-<h2 id="-flannel-">部署 flannel 网络</h2>
-<p><code>flannel</code>是一个专门为 k8s 设置的网络规划服务，可以让集群中的不同节点主机创建的 docker 容器都具有全集群唯一的虚拟IP地址。想要部署<code>flannel</code>的话直接执行下述命令即可：</p>
-<pre><code>kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
-</code></pre>
-<p>由于<code>raw.githubusercontent.com</code>被墙了，所以需要现在<a href="https://www.ipaddress.com/">IpAdress.com</a>输入<code>raw.githubusercontent.com</code>查询ip地址然后添加到hosts文件</p>
-<ul>
-<li>
-<p>查询ip</p>
-<p><img src="/post-images/1596257505307.png" alt="" /></p>
-</li>
-<li>
-<p>修改hosts文件，<code>sudo vim /etc/hosts</code>，添加查询到的ip地址</p>
-<p><img src="/post-images/1596257514487.png" alt="" /></p>
-</li>
-</ul>
-<p>如果输出了下面类似的内容，则表示安装成功：</p>
-<p><img src="/post-images/1596257523541.png" alt="" /></p>
-<p>至此<code>k8s的master</code>节点部署完成</p>
-<h2 id="worker">克隆一个worker的虚拟机</h2>
-<p>woker节点，也需要安装K8s和docker相关工具，为了方便我们之间从master虚拟机克隆一台来作为node（克隆前需要先关闭虚拟机）：</p>
-<p><img src="/post-images/1596257531468.png" alt="" /></p>
-<p>需要注意克隆类型选择<code>完整克隆</code></p>
-<p><img src="/post-images/1596257538388.png" alt="" /></p>
-<p>克隆成功后进入worker机器 由于master是设置的静态ip，克隆出来的虚拟机ip会有冲突，所以我们还需要修改ip地址。</p>
-<h2 id="-node-">将 node 节点加入网络</h2>
-<ol>
-<li>
-<p>由于我们node节点是从master里克隆出来的，所以主机名会重复，我们需要修改主机名为node：</p>
-<pre><code class="language-c">sudo hostnamectl set-hostname node
-</code></pre>
-<p>再使用hostname查看改动是否生效：</p>
-<p><img src="/post-images/1596257564842.png" alt="" /></p>
-</li>
-<li>
-<p>执行master节点生成的<code>kubeadm join</code>指令</p>
-<pre><code>sudo kubeadm join 192.168.1.6:6443 --token purbtm.12d7g98hq3kljqof     --discovery-token-ca-cert-hash sha256:c0b3f8da3ae4a668e3159716f4a821adf32166940103ac807f19d5c9df46a1e2
-</code></pre>
-<p>注意不要直接复制，每个机器都会不一样。</p>
-<p>如果执行错误了，同样需要执行<code>kubeadm reset</code>重置，再重新执行命令</p>
-<p>如果出现了下面类似的输出，就表示成功了：</p>
-<p><img src="/post-images/1596257584505.png" alt="" /></p>
-</li>
-<li>
-<p>回到master节点，执行<code>kubectl get nodes</code>查看节点情况，可以看出node已经加了节点：</p>
-<p><img src="/post-images/1596257592759.png" alt="" /></p>
-</li>
-</ol>
-
-        </div>
-        
-        
-        <div class="next-post">
-            下一篇
-            <a href="/post/shi-yong-dai-li-jia-su-github/">
-                使用代理加速github
-            </a>
-        </div>
-        
-    </div>
-    </div>
-</body>
-<script>
-    var t_img; // 定时�?
-    var isLoad = true; // 控制变量
-    isImgLoad(function () {
-        // 加载完成
-        $('.postdetailimg').css("display", "block");
-    });
-    // 判断图片加载的函�?
-    function isImgLoad(callback) {
-        // 注意我的图片类名都是cover，因为我�?需要�?�理cover。其它图片可以不管�?
-        // 查找所有封面图，迭代�?�理
-        $('.postdetailimg').each(function () {
-            // 找到�?0就将isLoad设为false，并退出each
-            if (this.height === 0) {
-                isLoad = false;
-                return false;
-            }
-        });
-        // 为true，没有发现为0的。加载完�?
-        if (isLoad) {
-            clearTimeout(t_img); // 清除定时�?
-            // 回调函数
-            callback();
-            // 为false，因为找到了没有加载完成的图，将调用定时器递归
-        } else {
-            isLoad = true;
-            t_img = setTimeout(function () {
-                isImgLoad(callback); // 递归�?�?
-            }, 500); // 我这里�?�置的是500�?秒就�?描一次，�?以自己调�?
-        }
-    }
-
-    //文章阅读热度
-    var pl = $("#pl").html();
-    var rootaddr = $("#rootaddr").html();
-    pl = pl.replace(rootaddr, "");
-    $("#hotnum").attr('id', pl);
-</script>
-        <div name="comment" style="background: white">
-            <div class="commentcontainer">
-                
-                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
-                
-            </div>
-        </div>
-    </div>
-     
-                <div class="toc-container">
-                    
-    </div>
-    </div>
-    </div>
-    <div class="toggleContainer">
-        <div class="toggle">
-            <i class="fas fa-angle-double-up"></i>
-        </div>
-    </div>
-    <div id="bg">
-    </div>
-    <div id="bgchoice" style="display: none">default</div>
-    
-    <div id="bgurl" style="display:none">\media\images\custom-bgimage.jpg</div>
-       
-    </div>
-    <!-- 响应式布局，针对手机端内容显示 -->
-    <div class="nav-small">
-        <head>
-  <!-- 引入Bootstrap核心样式文件 -->
-  <link rel="stylesheet" href="/media/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
 <meta name="description" content="通过vmware虚拟机安装两个ubuntu系统，部署k8s集群。其中要把虚拟机的网卡模式要选择为桥接模式(默认为NAT) ubuntu版本: 关闭SWAP内存 k8s要求关闭电脑的swap内存，修改**/etc/fstab**文件， 注释掉红框内的两行: ![](/post-i&amp;hellip;">
 <link rel="canonical" href="https://zylikedream.github.io/post/ubuntu-tong-guo-kubeadmin-bu-shu-k8s-ji-qun/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"ubuntu通过Kubeadmin部署K8s集群","url":"https://zylikedream.github.io/post/ubuntu-tong-guo-kubeadmin-bu-shu-k8s-ji-qun/","description":"通过vmware虚拟机安装两个ubuntu系统，部署k8s集群。其中要把虚拟机的网卡模式要选择为桥接模式(默认为NAT) ubuntu版本: 关闭SWAP内存 k8s要求关闭电脑的swap内存，修改**/etc/fstab**文件， 注释掉红框内的两行: ![](/post-i\u0026hellip;","image":"/post-images/ubuntu-tong-guo-kubeadmin-bu-shu-k8s-ji-qun.jpg","datePublished":"2020-08-01T12:43:46+08:00","dateModified":"2026-05-28T11:02:21+08:00","author":{"@type":"Person","name":"梦想存储罐"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/images/avatar.png"},"name":"梦想存储罐"}}</script>
@@ -687,141 +36,87 @@ sudo chown -R `whoami`:`whoami` ~/.kube
 </head>
 
 <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-          data-target="#barmenu" aria-expanded="false" id="barbutton">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/">梦想存储罐&nbsp;&nbsp;|</a>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="barmenu">
-        <ul class="nav navbar-nav">
-          
-          
-          <li>
-            <a href="/">
-              首页
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archives">
-              归档
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/tags">
-              标签
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/post/about">
-              关于
-            </a>
-          </li>
-          
-          
-          
-          
-          <li><a href="/friends">友链</a></li>
-
-          
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
-
-
-  <!-- 引入jQuery核心js文件 -->
-  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script>
-  var btstate = false;
-  var bt = $("#barbutton");
-  var bm = $("#barmenu");
-  bt.click(function(){
-    dropdown();
-  })
-  function dropdown(){
-    console.log(btstate);
-    //下拉
-    if(btstate==false){
-      bt.removeClass("collapsed");
-      bt.attr("aria-expanded","true");
-      bm.attr("aria-expanded","true")
-      bm.fadeIn(700);
-      btstate = true;
-    }
-    else{
-      bt.addClass("collapsed");
-      bt.attr("aria-expanded","false");
-      bm.removeClass("in");
-      bm.hide();
-      bm.attr("aria-expanded","false");
-      btstate = false;
-    }
-  }
-  </script> 
-</body>
-    <div style="margin-top:30px"></div>
-    <link rel="stylesheet" href="/media/css/font-awesome.css">
-<style>
-
-</style>
-
-<body>
-    <div class="allcontent" id="postdetail">
-        <div class="postshow">
+    <div class="main">
+        <div class="main-content">
             
-            <div class="postdetailimg" style="width:100%;overflow: hidden;display: none">
-                <img src="/post-images/ubuntu-tong-guo-kubeadmin-bu-shu-k8s-ji-qun.jpg" class="postimage" style="cursor:auto">
-            </div>
-            <div class="postinfo-detail">
-                <div class="postdate"><i class="fa fa-calendar"></i>2020-08-01</div>
-                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 9 分钟阅读</div>
-                <div class="posttag">
+<div class="site-header">
+    <a href="/">
+        <img class="avatar" src="/images/avatar.png?v=1779942236" alt="">
+    </a>
+    <h1 class="site-title">
+        梦想存储罐
+    </h1>
+    <p class="site-description">
+        梦想存储罐
+    </p>
+    <div class="menu-container">
+        
+        
+        <a href="/" class="menu">
+            首页
+        </a>
+        
+        
+        
+        <a href="/archives" class="menu">
+            归档
+        </a>
+        
+        
+        
+        <a href="/tags" class="menu">
+            标签
+        </a>
+        
+        
+        
+        <a href="/post/about" class="menu">
+            关于
+        </a>
+        
+        
+    </div>
+    <div class="social-container">
+        
+        
+        
+        
+        
+    </div>
+</div>
+
+            <div class="post-detail">
+                <article class="post">
+                    <h2 class="post-title">
+                        ubuntu通过Kubeadmin部署K8s集群
+                    </h2>
+                    <div class="post-info">
+                        <span>
+                            2020-08-01
+                        </span>
+                        <span>
+                            9 分钟阅读
+                        </span>
+                        
+                        <a href="/tag/dl1tDxbM1/" class="post-tag">
+                            # ubuntu
+                        </a>
+                        
+                        <a href="/tag/xzK2l-mvU/" class="post-tag">
+                            # k8s
+                        </a>
+                        
+                        <a href="/tag/-6xFciZl1/" class="post-tag">
+                            # docker
+                        </a>
+                        
+                    </div>
                     
-                    <a href="/tag/dl1tDxbM1/" class="postlink">
-                        <i class="fa fa-tag"></i> ubuntu
-                    </a>
+                    <img class="post-feature-image" src="/post-images/ubuntu-tong-guo-kubeadmin-bu-shu-k8s-ji-qun.jpg" alt="">
                     
-                    <a href="/tag/xzK2l-mvU/" class="postlink">
-                        <i class="fa fa-tag"></i> k8s
-                    </a>
-                    
-                    <a href="/tag/-6xFciZl1/" class="postlink">
-                        <i class="fa fa-tag"></i> docker
-                    </a>
-                    
-                </div>
-            </div>
-            
-        <div id="texttitle" style="text-align: center">
-            <h2>ubuntu通过Kubeadmin部署K8s集群</h2>
-            <!-- id 将作为查询条件 -->
-            <div id="pl" style="display:none">/post/ubuntu-tong-guo-kubeadmin-bu-shu-k8s-ji-qun/</div>
-            <div id="rootaddr" style="display:none">https://zylikedream.github.io</div>
-            <span id="hotnum" class="leancloud_visitors" data-flag-title="ubuntu通过Kubeadmin部署K8s集群">
-                <h4 class="readercount">热度🔥: <i class="leancloud-visitors-count">loading...</i></h4>
-            </span>
-        </div>
-        <div class="text ">
-            <p>通过vmware虚拟机安装两个ubuntu系统，部署k8s集群。其中要把虚拟机的网卡模式要选择为<strong>桥接模式</strong>(默认为NAT)</p>
+                    <div class="post-content-wrapper">
+                        <div class="post-content" v-pre>
+                            <p>通过vmware虚拟机安装两个ubuntu系统，部署k8s集群。其中要把虚拟机的网卡模式要选择为<strong>桥接模式</strong>(默认为NAT)</p>
 <p>ubuntu版本:<br />
 <img src="/post-images/1596257304653.png" alt="" /></p>
 <h2 id="swap">关闭SWAP内存</h2>
@@ -1033,139 +328,79 @@ sudo chown -R `whoami`:`whoami` ~/.kube
 </li>
 </ol>
 
-        </div>
-        
-        
-        <div class="next-post">
-            下一篇
-            <a href="/post/shi-yong-dai-li-jia-su-github/">
-                使用代理加速github
-            </a>
-        </div>
-        
-    </div>
-    </div>
-</body>
-<script>
-    var t_img; // 定时�?
-    var isLoad = true; // 控制变量
-    isImgLoad(function () {
-        // 加载完成
-        $('.postdetailimg').css("display", "block");
-    });
-    // 判断图片加载的函�?
-    function isImgLoad(callback) {
-        // 注意我的图片类名都是cover，因为我�?需要�?�理cover。其它图片可以不管�?
-        // 查找所有封面图，迭代�?�理
-        $('.postdetailimg').each(function () {
-            // 找到�?0就将isLoad设为false，并退出each
-            if (this.height === 0) {
-                isLoad = false;
-                return false;
-            }
-        });
-        // 为true，没有发现为0的。加载完�?
-        if (isLoad) {
-            clearTimeout(t_img); // 清除定时�?
-            // 回调函数
-            callback();
-            // 为false，因为找到了没有加载完成的图，将调用定时器递归
-        } else {
-            isLoad = true;
-            t_img = setTimeout(function () {
-                isImgLoad(callback); // 递归�?�?
-            }, 500); // 我这里�?�置的是500�?秒就�?描一次，�?以自己调�?
-        }
-    }
+                        </div>
+                        <div class="toc-container">
+                            
+                        </div>
+                    </div>
+                </article>
+            </div>
 
-    //文章阅读热度
-    var pl = $("#pl").html();
-    var rootaddr = $("#rootaddr").html();
-    pl = pl.replace(rootaddr, "");
-    $("#hotnum").attr('id', pl);
-</script>
-    <div name="comment" style="background: white;margin-top:100px">
-        <div class="commentcontainer">
             
-            <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+            <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="/post/shi-yong-dai-li-jia-su-github/">
+                    <h3 class="post-title">
+                        使用代理加速github
+                    </h3>
+                </a>
+            </div>
             
+
+            
+
+            
+<div class="site-footer">
+    Powered by &lt;a href=&#34;https://github.com/getgridea/gridea&#34; target=&#34;_blank&#34;&gt;Gridea&lt;/a&gt;
+    <a class="rss" href="/atom.xml" target="_blank">
+        <i class="ri-rss-line"></i> RSS
+    </a>
+</div>
+
         </div>
     </div>
-    </div>
-    <div id="landlord">
-        <div class="message" style="opacity:0"></div>
-        <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
-    </div>
-    <div id="codeCopyText" style="display: none">代码复制成功了哦</div>
-    <div id="domainname" style="display:none">https://zylikedream.github.io</div>
-    <script>console.log("\n%c ✦ Gridea Pro v1.2.1 %c · Theme: fog v0.5 · https://gridea.pro %c\n","color:#fadfa3;background:#111111;padding:9px 14px;border-radius:4px 0 0 4px;font-weight:500;font-size:12px","color:#e05c00;background:#fff3ec;padding:9px 14px;border-radius:0 4px 4px 0;font-size:11px","")</script>
-</body>
-    <script src="/media/js/post.js"></script>
+
     <script>
-        //寻找所有code标签，加复制按钮鸭！(行内代码除外)
-        var codes = document.getElementsByTagName('code');
-        if (codes.length) {
-            for (var i = 0; i < codes.length; i++) {
-                //高度/行高=文本行数
-                // var rowNum=Math.round(codes[i].height()/parseFloat(codes[i].css('line-height')));
-                // console.log("当前有"+rowNum+"行");
-                var code_id = "code_id_" + i;
-                codes[i].setAttribute("id", code_id);
-                var ci = "#" + code_id;
-                var codedot = $(ci);
-                var rowNum = Math.round(codedot.height() / parseFloat(codedot.css('line-height')));
-                if (rowNum <= 1) continue;
-                var btn = document.createElement("button");
-                btn.setAttribute("class", "copybt");
-                btn.setAttribute("data-clipboard-target", "#" + code_id);
-                btn.innerHTML = '复制代码';
-                codes[i].parentNode.insertBefore(btn, codes[i]);
-            }
-        };
-        var cop = new ClipboardJS('.copybt');
-        var codeCopyText = $("#codeCopyText").html();
-        cop.on('success', function (e) {
-            alert(codeCopyText);
-            e.clearSelection();
-        });
-        cop.on('error', function (e) {
-            alert("矮油，复制失败了...手动复制吧勇士！");
-            e.clearSelection();
-        });
-    </script>
-    
-    <script type="text/javascript">
-        var message_Path = '/live2d/'
-        var home_Path = document.getElementById("domainname").innerHTML+"/"; //此处修改为你的域名，必须带斜杠
-    </script>
-    <script type="text/javascript" src="/media/live2d/js/live2d.js"></script>
-    <script type="text/javascript" src="/media/live2d/js/message.js"></script>
-    <script type="text/javascript">
-        loadlive2d("live2d", "/media/live2d/assets/tororo.model.json");
-    </script>
-    
-<script>
-$(function () {
-    $('.toggleContainer').click(function(){$('html,body').animate({scrollTop: '0px'}, 800);});
-	$(window).scroll(function() {
-        var st = $(window).scrollTop();
-        if(st > 30){
-            $(".toggleContainer").fadeIn(400);
-        }else{
-            $(".toggleContainer").fadeOut(100);
-        }
-	});
-});
-</script>
+        hljs.initHighlightingOnLoad()
 
-<script>
-        var bgchoice=$('#bgchoice').html();
-        var bg = $('#bg');
-        var bgurl = document.getElementById("bgurl").innerHTML;
-        if(bgchoice=='default')
-            for (var i = 0; i < 3; i++)
-                bgurl = bgurl.replace("\\", "/");
-        bg.css("background", "url('" + bgurl + "')");
-</script>
+        let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
 
-    <script src="/media/js/index.js"></script>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        window.addEventListener("scroll", event => {
+            let fromTop = window.scrollY;
+
+            mainNavLinks.forEach((link, index) => {
+                let section = document.getElementById(decodeURI(link.hash).substring(1));
+                let nextSection = null
+                if (mainNavLinks[index + 1]) {
+                    nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+                }
+                if (section.offsetTop <= fromTop) {
+                    if (nextSection) {
+                        if (nextSection.offsetTop > fromTop) {
+                            link.classList.add("current");
+                        } else {
+                            link.classList.remove("current");
+                        }
+                    } else {
+                        link.classList.add("current");
+                    }
+                } else {
+                    link.classList.remove("current");
+                }
+            });
+        });
+
+    </script>
+<script>console.log("\n%c ✦ Gridea Pro v1.2.1 %c · Theme: inotes v1.0.0 · https://gridea.pro %c\n","color:#fadfa3;background:#111111;padding:9px 14px;border-radius:4px 0 0 4px;font-weight:500;font-size:12px","color:#e05c00;background:#fff3ec;padding:9px 14px;border-radius:0 4px 4px 0;font-size:11px","")</script>
+</body>
+
+</html>
