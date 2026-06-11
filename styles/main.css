@@ -997,8 +997,12 @@ pre code {
   padding-left: 5%;
 }
 .archives-content {
-  background: white;
+  background: rgba(255, 255, 255, 0.72);
   min-height: 100vh;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.16);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   animation: fade-in;
   /*动画名称*/
   animation-duration: 1s;
@@ -1067,7 +1071,7 @@ pre code {
   margin-top: 5px;
 }
 .archives-title {
-  color: black;
+  color: #111827;
   text-align: left;
   font-weight: 300;
   font-size: 1.5em;
@@ -1076,7 +1080,7 @@ pre code {
   padding-top: 3%;
   text-align: left;
   font-weight: lighter;
-  color: #ced4da;
+  color: #495057;
 }
 @keyframes fade-in {
   0% {
