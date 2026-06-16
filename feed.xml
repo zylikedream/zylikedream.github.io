@@ -6,8 +6,458 @@
     <description>梦想存储罐</description>
     <language>zh-cn</language>
     <generator>Gridea Pro</generator>
-    <lastBuildDate>Thu, 11 Jun 2026 20:28:21 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jun 2026 13:21:35 +0800</lastBuildDate>
     <atom:link href="https://zylikedream.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
+    <item>
+      <title>北欧神话《克瓦希尔》AI视频创作记录</title>
+      <link>https://zylikedream.github.io/post/bei-ou-shen-hua-ke-wa-xi-er-ai-shi-pin-chuang-zuo-ji-lu/</link>
+      <guid isPermaLink="true">https://zylikedream.github.io/post/bei-ou-shen-hua-ke-wa-xi-er-ai-shi-pin-chuang-zuo-ji-lu/</guid>
+      <pubDate>Sun, 14 Jun 2026 23:30:00 +0800</pubDate>
+      <description><![CDATA[<p>这次做的是北欧神话系列里的一个片段，主题是克瓦希尔、诗歌蜜酒，以及智慧如何被传承下去。</p>
+<p>先简单交代一下这个故事的背景：</p>
+<p>克瓦希尔是阿萨神族与华纳神族结束战争后，共同创造出的智慧化身。他通晓万物，也愿意把自己的知识分享给所有人。后来，他被邪恶的侏儒法亚拉和加拉尔杀害，他的力量又被融进蜂蜜里，变成了传说中的“诗歌蜜酒”。任何人只要喝下它，就会获得诗人或学者般的表达与领悟能力。</p>
+<p>我这次没有直接照着原始神话去讲，而是做了明显的童话化改编：弱化了血腥感，把重点放在“智慧如何诞生、被夺走、又重新流向人间”这条线索上。后半段加入鲁恩和蓝色小鸟，也是在让整个故事更完整、更温柔，更适合儿童绘本动画的气质。</p>
+<h2 id="heading">这次比较有效的做法</h2>
+<ol>
+<li>用整体场景图做约束，一个图里尽量包含角色、空间、光线和情绪信息，会比把元素拆开描述更容易保证一致性和连续性。</li>
+<li>连续叙事的镜头尽量保留统一场景图、角色参考图，必要时接上一镜头尾帧，比单纯补文字约束稳定得多。</li>
+<li>当模型反复报错或表现异常时，先排查角色命名、敏感词和平台限制，不要只在画面和提示词细节里来回试错。</li>
+</ol>
+<h2 id="heading-1">已知的问题</h2>
+<ol>
+<li>洞穴场景的一致性依然不够稳定，尤其是镜头 10，参考图使用方式不对，导致生成的洞穴和前面镜头有割裂感。</li>
+<li>个别镜头的人物形象还是会有轻微漂移，说明单靠文字约束还不够，最好始终配合更稳定的角色参考图或上一镜头尾帧。</li>
+<li>豆包在某些名字上会触发限制，这次一开始一直以为是图片或提示词内容有问题，后来才发现是角色名“埃纳尔”触发了限制，最后改成了 <code>Rune / 鲁恩</code>。</li>
+<li>一些带明确交互动作的镜头仍然容易穿帮，比如镜头 19 里的“打开窗户”，这类动作如果一直生成不好，可能更适合拆成两段或者后期处理。</li>
+<li>主角和侏儒的身高差距，再洞穴没能体现（搞忘记了），应该做成全局约束，再提示词里展现出来。</li>
+</ol>
+<h2 id="-0">镜头 0</h2>
+<p><strong>分镜名称：</strong> 神明和解与智慧诞生</p>
+<p><strong>参考素材</strong></p>
+<p>参考图 1</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B40/%E8%8D%89%E5%9C%B0.png" alt="草地.png" /></p>
+<p><strong>生成成片</strong></p>
+<video controls preload="metadata" width="480">
+  <source src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E9%95%9C%E5%A4%B40-%E5%BC%80%E5%9C%BA.mp4" type="video/mp4">
+</video>
+<p><strong>视频生成提示词</strong></p>
+<p>生成视频：儿童绘本二维动画，柔和可爱卡通手绘画风，童话电影开篇全景镜头，全程极缓慢匀速向前推镜，轻微柔和镜头呼吸晃动，无人物、无小动物、无建筑杂物。</p>
+<p>春日辽阔静谧的嫩绿色起伏草甸，澄澈淡蓝色晴空漂浮两朵棉花糖质感蓬松白云；远处缓坡山丘顶端伫立一棵粗壮繁茂巨型老橡树，枝叶饱满舒展；蜿蜒浅棕泥土小路隐在草坡间。</p>
+<p>画面前景丛生野花随风轻柔小幅摆动：大片白雏菊、深邃蓝矢车菊、蓬松蒲公英绒球，细碎小黄野花铺满草丛；两只纯白色小蝴蝶轻振薄翅，在花丛间慢悠悠盘旋飞舞，动作舒缓流畅。</p>
+<p>画面上半区正中央悬浮一团朦胧温暖金色魔法柔光团，光晕边缘虚化弥散，自带缓慢呼吸式明暗明灭效果，持续散发柔和漫射魔幻光晕，温柔空灵，暗含即将诞生美好事物的故事感。</p>
+<p>清晨温润暖调天光铺满整片原野，低饱和马卡龙清新扁平配色，干净简约二分平涂阴影，全画面线条圆润无尖锐棱角，低对比度通透柔光质感，细腻水彩手绘肌理，整体宁静治愈、梦幻温柔，如同翻开童话绘本第一页的静谧开篇氛围。16:9。</p>
+<p><strong>台词</strong></p>
+<p><code>Long ago, the gods made peace. From their shared wisdom, Kvasir was born — the wisest in all the nine worlds.</code></p>
+<hr />
+<h2 id="-1">镜头 1</h2>
+<p><strong>分镜名称：</strong> 克瓦希尔初登场</p>
+<p><strong>参考素材</strong></p>
+<p>参考图 1</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B41/%E5%9C%BA%E6%99%AF.png" alt="场景.png" /></p>
+<p>参考图 2</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B41/%E7%A7%91%E7%93%A6%E5%B8%8C%E5%B0%94.png" alt="科瓦希尔.png" /></p>
+<p>参考图 3</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B41/%E8%93%9D%E8%89%B2%E5%B0%8F%E9%B8%9F.png" alt="蓝色小鸟.png" /></p>
+<p><strong>生成成片</strong></p>
+<video controls preload="metadata" width="480">
+  <source src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E9%95%9C%E5%A4%B41-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94.mp4" type="video/mp4">
+</video>
+<p><strong>视频生成提示词</strong></p>
+<p>生成图片：儿童绘本二维动画，柔和治愈可爱卡通手绘风格，16:9 画幅，平缓中景镜头，轻微柔和镜头呼吸晃动，整体柔光氛围感。</p>
+<p>人物克瓦希尔从画面右侧沿土路缓步走到半坡坡上，步伐舒缓；一只圆乎乎胖嘟嘟的浅蓝色小鸟稳稳停在他左肩，时不时轻轻转头梳理羽毛，动作轻柔缓慢。</p>
+<p>人物向前行走几步后驻足停下，脸颊晕开圆圆的粉嫩腮红；一双清澈淡紫色大眼睛，瞳孔带有细碎星星高光，眼神温柔；嘴角轻轻上扬，露出温和浅笑，嘴巴张开唱起了歌；右手缓慢向上抬起，掌心轻轻朝上摊开，姿态温柔，一只白色蝴蝶飞到了他的掌心上，周身环绕一层淡淡的柔和光晕。</p>
+<p>美术画质：低饱和马卡龙清新扁平配色，简约干净二分平涂阴影，所有线条圆润无尖锐棱角，低对比通透柔光质感，细腻水彩手绘肌理，整体宁静温柔童话氛围。</p>
+<p>约束：无多余杂物、无其他人物、无杂乱建筑，动作舒缓流畅，无快速大幅度运动。16:9。</p>
+<p><strong>台词</strong></p>
+<p><code>Kvasir carry the mead of poetry. Wherever he goes, he shares stories and songs!</code></p>
+<hr />
+<h2 id="-2">镜头 2</h2>
+<p><strong>分镜名称：</strong> 侏儒兄弟暗中发现克瓦希尔</p>
+<p><strong>参考素材</strong></p>
+<p>参考图 1</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B42/%E5%8A%A0%E6%8B%89%E5%B0%94Galar%E4%BE%8F%E5%84%92%E5%BC%9F%E5%BC%9F.png" alt="加拉尔Galar侏儒弟弟.png" /></p>
+<p>参考图 2</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B42/%E6%B3%95%E4%BA%9A%E6%8B%89Fjalar%20.png" alt="法亚拉Fjalar .png" /></p>
+<p>参考图 3</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B42/%E8%8D%89%E5%9C%B02.png" alt="草地2.png" /></p>
+<p><strong>生成成片</strong></p>
+<video controls preload="metadata" width="480">
+  <source src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E9%95%9C%E5%A4%B42-%E7%9F%AE%E4%BA%BA%E5%85%84%E5%BC%9F.mp4" type="video/mp4">
+</video>
+<p><strong>视频生成提示词</strong></p>
+<p>生成视频：参考场景图。儿童绘本动画风格，可爱卡通画风，16:9 画幅，平缓固定远景镜头，轻微柔和镜头呼吸晃动。草地灌木丛场景，蓝天白云，太阳暖光。画面左侧是一丛茂密绿色灌木。法亚拉和加拉尔从灌木后方探出头和肩膀，两人眼睛紧盯着画面右侧方向，眼神专注又兴奋。灌木叶子微微抖动。随后两人带着大大的笑容从灌木后跑出来，向画面右侧跑去，跑出了镜头外。</p>
+<p><strong>台词</strong></p>
+<p><code>Brother, that is Kvasir!</code></p>
+<hr />
+<h2 id="-3">镜头 3</h2>
+<p><strong>分镜名称：</strong> 兄弟二人与克瓦希尔相遇</p>
+<p><strong>参考素材</strong></p>
+<p>参考图 1</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B43/%E5%8A%A0%E6%8B%89%E5%B0%94Galar%E4%BE%8F%E5%84%92%E5%BC%9F%E5%BC%9F.png" alt="加拉尔Galar侏儒弟弟.png" /></p>
+<p>参考图 2</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B43/%E5%9C%BA%E6%99%AF3.png" alt="场景3.png" /></p>
+<p>参考图 3</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B43/%E6%B3%95%E4%BA%9A%E6%8B%89Fjalar%20.png" alt="法亚拉Fjalar .png" /></p>
+<p>参考图 4</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B43/%E7%A7%91%E7%93%A6%E5%B8%8C%E5%B0%94.png" alt="科瓦希尔.png" /></p>
+<p><strong>生成成片</strong></p>
+<video controls preload="metadata" width="480">
+  <source src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E9%95%9C%E5%A4%B43-%E7%9B%B8%E9%81%87.mp4" type="video/mp4">
+</video>
+<p><strong>视频生成提示词</strong></p>
+<p>生成视频：儿童绘本动画风格，可爱卡通画风。草地远景。侏儒法亚拉和加拉尔从画面左侧跑向站在右侧的克瓦希尔。克瓦希尔身穿月白色长袍，银白色长发，转过身来面对他们，面带温和微笑看着两个气喘吁吁的侏儒。法亚拉和加拉尔在克瓦希尔面前站定，抬头仰望着他，脸上带着急切的笑容。背景是蓝天绿草，前景有野花。16:9。</p>
+<p><strong>补充说明</strong></p>
+<p>这一镜头承担的是正式会面，所以情绪上不需要太戏剧化，重点是让克瓦希尔的“温柔、智慧、没有防备”先立住。</p>
+<hr />
+<h2 id="-4">镜头 4</h2>
+<p><strong>分镜名称：</strong> 法亚拉恳求邀请</p>
+<p><strong>参考素材</strong></p>
+<p>参考图 1</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B44/%E5%8F%82%E8%80%83%E5%9B%BE.png" alt="参考图.png" /></p>
+<p><strong>生成成片</strong></p>
+<video controls preload="metadata" width="480">
+  <source src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E9%95%9C%E5%A4%B44.mp4" type="video/mp4">
+</video>
+<p><strong>视频生成提示词</strong></p>
+<p>儿童绘本动画风格，可爱卡通画风。特写镜头，显示角色脸部和上半身，背景完全虚化为柔和草地色块。</p>
+<p>法亚拉正面半身：矮壮敦实，大圆脸红扑扑，深赭石色粗硬短发乱翘，浓密络腮胡编成三股辫，辫尾系铜环，宽扁鼻子，毛毛虫粗眉毛，小眼睛深棕色热切放光。双手合十放在胸前，眉毛高高挑起，嘴巴张开说话，嘴型夸张恳切，咧嘴笑露金牙。身体微微前倾。深灰色粗麻短上衣外罩深橙棕色皮革围裙，皮绳项链坠茶晶原石。</p>
+<p><strong>台词</strong></p>
+<p><code>The dwarves ran up to Kvasir with eager smiles, looking up at the tall wise figure.</code></p>
+<hr />
+<h2 id="-5">镜头 5</h2>
+<p><strong>分镜名称：</strong> 克瓦希尔答应同行</p>
+<p><strong>参考素材</strong></p>
+<p>参考图 1</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B45/%E5%8F%82%E8%80%83%E5%9B%BE.png" alt="参考图.png" /></p>
+<p><strong>生成成片</strong></p>
+<video controls preload="metadata" width="480">
+  <source src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E9%95%9C%E5%A4%B45-%E5%90%8C%E6%84%8F.mp4" type="video/mp4">
+</video>
+<p><strong>视频生成提示词</strong></p>
+<p>儿童绘本动画风格，可爱卡通画风，16:9。特写镜头，显示角色脸部和上半身，背景完全虚化为柔和草地色块。克瓦希尔正面半身：修长身材，圆润柔和脸型，大而有神淡紫色眼睛带星星高光，温柔弯弯眉毛，圆圆粉色腮红。蓬松银白色中分长发，柔软微卷至肩头，发尾泛淡蓝色光泽。嘴巴张开说话，嘴角上扬露出温和微笑。点头表示同意，眼神看向镜头外。月白色宽袖长袍，袖口深蓝色滚边。</p>
+<p><strong>台词</strong></p>
+<p><code>Of course, my friends.</code></p>
+<hr />
+<h2 id="-6">镜头 6</h2>
+<p><strong>分镜名称：</strong> 洞穴中讲述故事</p>
+<p><strong>参考素材</strong></p>
+<p>参考图 1</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B46/%E5%8A%A0%E6%8B%89%E5%B0%94Galar%E4%BE%8F%E5%84%92%E5%BC%9F%E5%BC%9F.png" alt="加拉尔Galar侏儒弟弟.png" /></p>
+<p>参考图 2</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B46/%E6%B3%95%E4%BA%9A%E6%8B%89Fjalar%20.png" alt="法亚拉Fjalar .png" /></p>
+<p>参考图 3</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B46/%E6%B4%9E%E7%A9%B4.png" alt="洞穴.png" /></p>
+<p>参考图 4</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B46/%E7%A7%91%E7%93%A6%E5%B8%8C%E5%B0%94.png" alt="科瓦希尔.png" /></p>
+<p><strong>生成成片</strong></p>
+<video controls preload="metadata" width="480">
+  <source src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E9%95%9C%E5%A4%B46-%E6%BC%94%E8%AE%B2.mp4" type="video/mp4">
+</video>
+<p><strong>视频生成提示词</strong></p>
+<p>生成视频：儿童绘本动画风格，可爱卡通画风。洞穴内部全景。粗糙岩石墙壁上嵌着几颗发蓝光和紫光的水晶，一张圆形石桌居中，桌旁有两把木凳。角落木架上摆着陶罐和小布袋。右侧墙壁挂着铁质火把架，燃着温暖小火苗。</p>
+<p>三人围着石桌：克瓦希尔居中靠后坐着，右手抬起做讲述手势，表情温和微笑。法亚拉坐石桌左侧仰头专注听，加拉尔坐石桌右侧仰头听，眼神好奇。水晶缓慢呼吸式明灭，火把火焰微微摇曳。16:9。</p>
+<p><strong>台词</strong></p>
+<p><code>Deep in the cave, Kvasir told them stories of the stars and songs of the ocean.</code></p>
+<hr />
+<h2 id="-7">镜头 7</h2>
+<p><strong>分镜名称：</strong> 甜于蜂蜜的智慧</p>
+<p><strong>参考素材</strong></p>
+<p>参考图 1</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B47/%E5%9C%BA%E6%99%AF%E5%9B%BE.png" alt="场景图.png" /></p>
+<p><strong>生成成片</strong></p>
+<video controls preload="metadata" width="480">
+  <source src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E9%95%9C%E5%A4%B47-%E6%BC%94%E8%AE%B2%E7%BB%93%E5%B0%BE.mp4" type="video/mp4">
+</video>
+<p><strong>视频生成提示词</strong></p>
+<p>16:9 画面。儿童绘本动画风格，可爱卡通画风。特写镜头，显示角色脸部和上半身，背景完全虚化为洞穴暗调暖光。</p>
+<p>克瓦希尔正面半身：修长身材，圆润柔和脸型，大而有神淡紫色眼睛带星星高光，温柔弯弯眉毛，圆圆粉色腮红。蓬松银白色中分长发至肩头，发尾泛淡蓝光泽。嘴巴张开说话，眼神温柔像在分享秘密。嘴角带着浅浅微笑。月白色宽袖长袍，袖口深蓝色滚边。说话时头微微歪向一侧，画面留白在唇边，给“蜂蜜”那句话落下后留沉默时间。</p>
+<p><strong>台词</strong></p>
+<p><code>Wisdom is the sweetest treasure — sweeter even than honey. You can feel it when you close your eyes.</code></p>
+<hr />
+<h2 id="-8">镜头 8</h2>
+<p><strong>分镜名称：</strong> 法亚拉动起坏心思</p>
+<p><strong>参考素材</strong></p>
+<p>参考图 1</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B48/%E5%9C%BA%E6%99%AF%E5%9B%BE.png" alt="场景图.png" /></p>
+<p>参考图 2</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B48/%E9%A6%96%E5%B8%A7.png" alt="首帧.png" /></p>
+<p><strong>生成成片</strong></p>
+<video controls preload="metadata" width="480">
+  <source src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E9%95%9C%E5%A4%B48-%E5%9D%8F%E7%AC%91.mp4" type="video/mp4">
+</video>
+<p><strong>视频生成提示词</strong></p>
+<p>16:9 画面。儿童绘本动画风格，可爱卡通画风。特写镜头，显示角色脸部和上半身，背景完全虚化为洞穴暗调暖光。克瓦希尔慢慢闭上了眼睛。镜头向左转向法亚拉，法亚拉正面半身：矮壮敦实，大圆脸红扑扑，深赭石色粗硬短发乱翘，浓密络腮胡编成三股辫，宽扁鼻子，毛毛虫粗眉毛从皱眉猛挑高，深棕色小眼睛一转，嘴角慢慢咧开成坏笑，露出金牙的一角。无台词，全程无声坏笑，眼神狡黠。</p>
+<p><strong>补充说明</strong></p>
+<p>这一镜头很重要，它相当于故事气质的转折点。前面是温柔童话，到这里第一次出现“危险已经发生，只是主角还不知道”的感觉。</p>
+<hr />
+<h2 id="-9">镜头 9</h2>
+<p><strong>分镜名称：</strong> 夜里密谋毒酒</p>
+<p><strong>参考素材</strong></p>
+<p>参考图 1</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B49/%E5%8A%A0%E6%8B%89%E5%B0%94Galar%E4%BE%8F%E5%84%92%E5%BC%9F%E5%BC%9F.png" alt="加拉尔Galar侏儒弟弟.png" /></p>
+<p>参考图 2</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B49/%E5%9C%BA%E6%99%AF9.png" alt="场景9.png" /></p>
+<p>参考图 3</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B49/%E6%B3%95%E4%BA%9A%E6%8B%89Fjalar%20.png" alt="法亚拉Fjalar .png" /></p>
+<p><strong>生成成片</strong></p>
+<video controls preload="metadata" width="480">
+  <source src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E9%95%9C%E5%A4%B49-%E6%AF%92%E8%8D%AF.mp4" type="video/mp4">
+</video>
+<p><strong>视频生成提示词</strong></p>
+<p>生成视频：16:9 画面。儿童绘本动画风格，可爱卡通画风。近景，夜已深，墙壁水晶发出微弱蓝紫光，火把火焰摇曳。法亚拉和加拉尔站在洞穴角落木架前，背对镜头凑在一起密谋。法亚拉右手举一小瓶紫色液体，转头对加拉尔说话，眉毛高挑，咧嘴坏笑露金牙。加拉尔听着越睁越大，嘴巴张开露出恍然大悟的贪婪笑。特写镜头里，法亚拉将紫色液体倒入陶杯中搅匀。两人交换一个意味深长的坏笑。</p>
+<p><strong>台词</strong></p>
+<p><code>Brother, a magic sleeping brew! Then his shining wisdom will be ours forever!</code></p>
+<hr />
+<h2 id="-10">镜头 10</h2>
+<p><strong>分镜名称：</strong> 克瓦希尔喝下毒酒</p>
+<p><strong>参考素材</strong></p>
+<p>参考图 1</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B410/%E5%8A%A0%E6%8B%89%E5%B0%94Galar%E4%BE%8F%E5%84%92%E5%BC%9F%E5%BC%9F.png" alt="加拉尔Galar侏儒弟弟.png" /></p>
+<p>参考图 2</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B410/%E5%9C%BA%E6%99%AF9.png" alt="场景9.png" /></p>
+<p>参考图 3</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B410/%E6%B3%95%E4%BA%9A%E6%8B%89Fjalar%20.png" alt="法亚拉Fjalar .png" /></p>
+<p>参考图 4</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B410/%E7%A7%91%E7%93%A6%E5%B8%8C%E5%B0%94.png" alt="科瓦希尔.png" /></p>
+<p><strong>生成成片</strong></p>
+<video controls preload="metadata" width="480">
+  <source src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E9%95%9C%E5%A4%B410-%E4%B8%AD%E6%AF%92.mp4" type="video/mp4">
+</video>
+<p><strong>视频生成提示词</strong></p>
+<p>生成视频：16:9 画面。儿童绘本动画风格，可爱卡通画风。洞穴石桌旁中景。右侧石桌前，克瓦希尔侧身坐着：修长身材，银白中分长发泛淡蓝光泽，月白色宽袖长袍。法亚拉和加拉尔站在桌旁，法亚拉双手捧陶杯递上，双手微颤。克瓦希尔接过喝了一口，双眼缓缓闭合，趴在桌子上。一团温暖金色光芒从他身体里缓缓升起，照亮三人脸庞。</p>
+<p><strong>补充说明</strong></p>
+<p>这一镜头在制作时参考图用错了，导致生成出来的洞穴和前面镜头不一致。这里最大的教训就是：同一空间内的连续镜头，最好直接拿前一个视频的尾帧做参考图，而不是重新手写整段场景描述。</p>
+<p><strong>台词</strong></p>
+<p><code>That night, the dwarves gave Kvasir a special drink. He took a sip and fell into a peaceful sleep.</code></p>
+<hr />
+<h2 id="-11">镜头 11</h2>
+<p><strong>分镜名称：</strong> 法亚拉看到金色光芒</p>
+<p><strong>参考素材</strong></p>
+<p>参考图 1</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B411/%E5%8F%82%E8%80%83%E5%9B%BE.png" alt="参考图.png" /></p>
+<p><strong>生成成片</strong></p>
+<video controls preload="metadata" width="480">
+  <source src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E9%95%9C%E5%A4%B411-%E6%BF%80%E5%8A%A8.mp4" type="video/mp4">
+</video>
+<p><strong>视频生成提示词</strong></p>
+<p>16:9 画面。儿童绘本动画风格，可爱卡通画风。特写镜头，显示角色脸部和上半身，背景完全虚化为洞穴暗调，有金色暖光映在脸上。法亚拉正面半身：矮壮敦实，大圆脸红扑扑被金光映亮，深赭石色粗硬短发乱翘，浓密三股辫络腮胡辫尾系铜环，宽扁鼻子，毛毛虫粗眉毛高高扬起。嘴巴张开大喊说话，眼睛瞪大闪着金光反光，咧嘴露金牙。右手指向画面外下方，神情紧张又狂喜。</p>
+<p><strong>台词</strong></p>
+<p><code>Look, Galar! The golden light can mix with our mountain honey!</code></p>
+<hr />
+<h2 id="-12">镜头 12</h2>
+<p><strong>分镜名称：</strong> 光芒融入蜂蜜</p>
+<p><strong>参考素材</strong></p>
+<p>参考图 1</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B412/%E5%8A%A0%E6%8B%89%E5%B0%94Galar%E4%BE%8F%E5%84%92%E5%BC%9F%E5%BC%9F.png" alt="加拉尔Galar侏儒弟弟.png" /></p>
+<p>参考图 2</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B412/%E6%B3%95%E4%BA%9A%E6%8B%89Fjalar%20.png" alt="法亚拉Fjalar .png" /></p>
+<p>参考图 3</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B412/%E6%B4%9E%E7%A9%B4.png" alt="洞穴.png" /></p>
+<p>参考图 4</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B412/%E7%A7%91%E7%93%A6%E5%B8%8C%E5%B0%94.png" alt="科瓦希尔.png" /></p>
+<p>参考图 5</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B412/%E9%87%91%E5%85%89.png" alt="金光.png" /></p>
+<p><strong>生成成片</strong></p>
+<video controls preload="metadata" width="480">
+  <source src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E9%95%9C%E5%A4%B412-%E8%9E%8D%E5%90%88.mp4" type="video/mp4">
+</video>
+<p><strong>视频生成提示词</strong></p>
+<p>生成视频：16:9 画面。儿童绘本动画风格，可爱卡通画风。洞穴内全景，墙壁水晶泛蓝紫微光，火把火焰摇曳。石桌右侧，克瓦希尔闭眼安详地趴在石桌上沉睡，身体微微发光，一团温暖金色光芒缓缓浮起飘离身体。石桌左侧，加拉尔抱着一只宽口陶罐走过来放到石桌上。法亚拉站在中间。金色光团缓慢飘向罐口，如流水般注入罐中。光团与罐内蜂蜜交融，罐口开始飘出细小金色光点。法亚拉和加拉尔眼睛映着金光越睁越大。</p>
+<p><strong>台词</strong></p>
+<p><code>Galar placed a jar of golden honey on the stone table. The glowing light flowed from Kvasir's body into the jar.</code></p>
+<hr />
+<h2 id="-13">镜头 13</h2>
+<p><strong>分镜名称：</strong> 蜜酒被藏进暗格</p>
+<p><strong>参考素材</strong></p>
+<p>参考图 1</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B413/%E5%9C%BA%E6%99%AF.png" alt="场景.png" /></p>
+<p><strong>生成成片</strong></p>
+<video controls preload="metadata" width="480">
+  <source src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E9%95%9C%E5%A4%B413-%E5%A4%A7%E5%8A%9F%E5%91%8A%E6%88%90.mp4" type="video/mp4">
+</video>
+<p><strong>视频生成提示词</strong></p>
+<p>生成视频：16:9 画面，参考场景图并作为首帧。儿童绘本动画风格，可爱卡通画风。洞穴内全景，蓝色水晶微光呼吸式明灭，火把火焰摇曳。石桌正中央放着蜜酒罐，罐口仍有金色光点偶尔飘升。法亚拉端起蜜酒罐，转身走到洞穴深处角落的木架前，把罐子推进最上层的暗格中。加拉尔站在一旁，看着罐子被藏好。克瓦希尔已经消失，只剩下一点点亮光。罐子被推入暗处，只剩一丝微弱金光从木架缝隙渗出。水晶光逐渐暗淡，两人身影沉入阴影。</p>
+<p><strong>台词</strong></p>
+<p><code>The golden glow mixed with the honey, becoming the Mead of Poetry. One sip, and anyone could speak beautiful words.</code></p>
+<hr />
+<h2 id="-14">镜头 14</h2>
+<p><strong>分镜名称：</strong> 多年后，鲁恩登场</p>
+<p><strong>参考素材</strong></p>
+<p>参考图 1</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B414/%E5%9F%83%E7%BA%B3%E5%B0%94Einar%20.png" alt="埃纳尔Einar .png" /></p>
+<p>参考图 2</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B414/%E5%B0%8F%E5%B1%8B%E5%86%85%E9%83%A8.png" alt="小屋内部.png" /></p>
+<p><strong>生成成片</strong></p>
+<video controls preload="metadata" width="480">
+  <source src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E9%95%9C%E5%A4%B414-%E9%B2%81%E6%81%A9%E7%99%BB%E5%9C%BA.mp4" type="video/mp4">
+</video>
+<p><strong>视频生成提示词</strong></p>
+<p>16:9 画面。儿童绘本动画风格，可爱卡通画风。小木屋内部全景，温暖烛光氛围。</p>
+<p>鲁恩坐在旧木桌前眉毛紧锁，灰绿色眼睛迷茫望着桌上空白纸张。深棕色凌乱卷发至耳垂，额头天然一缕白发。薄唇轻抿，桌子边上停一只不起眼的灰色小飞蛾。铜烛台烛焰摇曳，窗外是深蓝夜空月光。鲁恩右手托着下巴，手指细长，指腹有墨迹。窗外枯枝阴影在对面墙上轻轻晃动。</p>
+<p><strong>补充说明</strong></p>
+<p>做这一镜头时，豆包一度不断提示版权冲突。我一开始一直以为是图有问题，后来才发现真正触发限制的是角色名字，所以后面把角色名改成了 <code>Rune / 鲁恩</code>。</p>
+<p><strong>台词</strong></p>
+<p><code>Years passed. In a tiny wooden cottage, a poor poet named Rune sat alone.</code></p>
+<hr />
+<h2 id="-15">镜头 15</h2>
+<p><strong>分镜名称：</strong> 创作枯竭的鲁恩</p>
+<p><strong>参考素材</strong></p>
+<p>参考图 1</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B415/%E9%A6%96%E5%B8%A7.png" alt="首帧.png" /></p>
+<p><strong>生成成片</strong></p>
+<video controls preload="metadata" width="480">
+  <source src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E9%95%9C%E5%A4%B415-%E7%83%A6%E6%81%BC.mp4" type="video/mp4">
+</video>
+<p><strong>视频生成提示词</strong></p>
+<p>儿童绘本卡通风格，4 头身比例，柔和的故事书插画风。特写镜头，显示鲁恩角色脸部和上半身，嘴巴张开说话，嘴型与台词同步，背景虚化为暖色烛光氛围。双手抱头，眉头紧锁，表情是深深的创作绝望与空虚。烛光在一侧脸上摇曳，另一侧在柔和的阴影中。背景完全虚化，暖橙棕色调。忧郁但温柔的情绪，不恐怖，适合幼儿。16:9 比例。</p>
+<p><strong>台词</strong></p>
+<p><code>Where have all the stories gone? Who can help me?</code></p>
+<hr />
+<h2 id="-16">镜头 16</h2>
+<p><strong>分镜名称：</strong> 蓝色小鸟听见愿望</p>
+<p><strong>参考素材</strong></p>
+<p>参考图 1</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B416/%E5%B0%8F%E5%B1%8B%E5%A4%96%E9%83%A8.png" alt="小屋外部.png" /></p>
+<p>参考图 2</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B416/%E8%93%9D%E8%89%B2%E5%B0%8F%E9%B8%9F.png" alt="蓝色小鸟.png" /></p>
+<p><strong>生成成片</strong></p>
+<video controls preload="metadata" width="480">
+  <source src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E9%95%9C%E5%A4%B416-%E7%83%A6%E6%81%BC.mp4" type="video/mp4">
+</video>
+<p><strong>视频生成提示词</strong></p>
+<p>儿童绘本卡通风格，4 头身比例，柔和的故事书插画风。夜晚，小木屋外景，茅草屋顶。一棵枯树的树枝从画面左侧伸入画面。一只圆滚滚的亮蓝色小鸟停在树枝上，头歪向右侧，眼睛里映着微弱暖光。小鸟胸部一挺，然后展开翅膀，带着坚定的动作飞走。背景深蓝夜空点缀稀疏星星。小屋窗户透出暖光。不恐怖，适合幼儿。16:9 比例。</p>
+<p><strong>台词</strong></p>
+<p><code>On a branch outside, the little bird heard Rune's words. It remembered Kvasir and his golden gift. It spread its wings and flew toward the cave.</code></p>
+<hr />
+<h2 id="-17">镜头 17</h2>
+<p><strong>分镜名称：</strong> 小鸟进入洞穴取酒</p>
+<p><strong>参考素材</strong></p>
+<p>参考图 1</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B417/%E6%A0%91%E5%8F%B6%E5%85%9C.png" alt="树叶兜.png" /></p>
+<p>参考图 2</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B417/%E6%B4%9E%E7%A9%B4.png" alt="洞穴.png" /></p>
+<p>参考图 3</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B417/%E7%BD%90%E5%AD%90.png" alt="罐子.png" /></p>
+<p>参考图 4</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B417/%E8%93%9D%E8%89%B2%E5%B0%8F%E9%B8%9F.png" alt="蓝色小鸟.png" /></p>
+<p><strong>生成成片</strong></p>
+<video controls preload="metadata" width="480">
+  <source src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E9%95%9C%E5%A4%B417-%E5%8F%96%E9%85%92mp4.mp4" type="video/mp4">
+</video>
+<p><strong>视频生成提示词</strong></p>
+<p>儿童绘本卡通风格，4 头身比例，柔和的故事书插画风。洞穴内部广角镜头，洞穴里的灯已经熄灭了，洞穴很久没有人来过了，桌子上落下了一些灰尘。一只圆滚滚的亮蓝色小鸟叼着一片卷成兜状的绿叶从画面外飞入洞穴，落在木架上。小鸟将叶兜探入发光的罐中舀起一些金色蜜酒。叶兜从内部透出金光，透过绿色叶脉闪烁。小鸟衔住叶柄，飞出画面。金色光点飘浮在空气中。墙壁水晶稳定发光。冷暖光对比，奇幻氛围，不恐怖，适合幼儿。16:9 比例。</p>
+<p><strong>台词</strong></p>
+<p><code>In the cave, the bird found the glowing golden mead, scooped some into a green leaf pouch, and flew out.</code></p>
+<hr />
+<h2 id="-18">镜头 18</h2>
+<p><strong>分镜名称：</strong> 小鸟带着蜜酒归来</p>
+<p><strong>参考素材</strong></p>
+<p>参考图 1</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B418/%E5%9C%BA%E6%99%AF%E5%9B%BE.png" alt="场景图.png" /></p>
+<p>参考图 2</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B418/%E5%A4%96%E6%99%AF.png" alt="外景.png" /></p>
+<p>参考图 3</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B418/%E5%B0%8F%E9%B8%9F%E5%92%8C%E6%A0%91%E5%8F%B6.png" alt="小鸟和树叶.png" /></p>
+<p>参考图 4</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B418/%E7%AA%97%E6%88%B7.png" alt="窗户.png" /></p>
+<p><strong>生成成片</strong></p>
+<video controls preload="metadata" width="480">
+  <source src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E9%95%9C%E5%A4%B418-%E5%8F%96%E9%85%92%E5%9B%9E%E6%9D%A5.mp4" type="video/mp4">
+</video>
+<p><strong>视频生成提示词</strong></p>
+<p>生成视频：儿童绘本卡通风格，4 头身比例，柔和的故事书插画风。夜晚，一座小木屋外景，木质外墙，茅草屋顶，一扇方形窗户透出暖色烛光。深蓝夜空点缀稀疏星星。一只圆滚滚的亮蓝色小鸟嘴里衔着一片卷成兜状的绿叶的叶柄，叶兜从内部透出暖金色光芒，透过半透明的绿色叶脉发亮。小鸟从镜头外飞来，停在树枝上，然后又飞向木质窗台。微小的金色光点从叶兜缓缓飘升。窗内烛光微微摇曳。小鸟微微歪头，神情骄傲而温柔。</p>
+<p><strong>台词</strong></p>
+<p><code>At last, the bird perched on Rune's windowsill.</code></p>
+<hr />
+<h2 id="-19">镜头 19</h2>
+<p><strong>分镜名称：</strong> 鲁恩接过叶兜</p>
+<p><strong>参考素材</strong></p>
+<p>参考图 1</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B419/%E5%86%85%E6%99%AF.png" alt="内景.png" /></p>
+<p>参考图 2</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B419/%E5%9C%BA%E6%99%AF%E5%9B%BE.png" alt="场景图.png" /></p>
+<p>参考图 3</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B419/%E5%9F%83%E7%BA%B3%E5%B0%94Einar%20.png" alt="埃纳尔Einar .png" /></p>
+<p><strong>生成成片</strong></p>
+<video controls preload="metadata" width="480">
+  <source src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E9%95%9C%E5%A4%B419-%E5%BE%97%E5%88%B0%E8%9C%9C%E9%85%92.mp4" type="video/mp4">
+</video>
+<p><strong>视频生成提示词</strong></p>
+<p>生成视频：儿童绘本卡通风格，4 头身比例，柔和的故事书插画风。中景，木屋内部向窗户外看。窗外木质窗台上，一只圆滚滚的亮蓝色小鸟嘴里衔着一片卷成兜状的绿叶，叶子从内部透出暖金色光芒，光芒透过半透明的绿色叶脉。鲁恩走到窗户前，打开窗户后，小鸟轻轻将叶兜举起，鲁恩兴奋地接过树叶。小鸟飞走。暖心、魔法感，不恐怖，适合幼儿。16:9 比例。</p>
+<p><strong>补充说明</strong></p>
+<p>这个镜头里的“打开窗户”动作试了很多次都有穿帮。如果下次再遇到类似动作，我会优先考虑拆成两个镜头，或者直接让窗户一开始就是开的，省掉最容易出问题的那一步。</p>
+<p><strong>台词</strong></p>
+<p><code>Rune pushed the window open. The little blue bird gently lifted the glowing leaf pouch toward him.</code></p>
+<hr />
+<h2 id="-20">镜头 20</h2>
+<p><strong>分镜名称：</strong> 鲁恩喝下蜜酒</p>
+<p><strong>参考素材</strong></p>
+<p>参考图 1</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B420/%E5%9C%BA%E6%99%AF%E5%9B%BE.png" alt="场景图.png" /></p>
+<p><strong>生成成片</strong></p>
+<video controls preload="metadata" width="480">
+  <source src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E9%95%9C%E5%A4%B420-%E5%96%9D%E4%B8%8B%E8%9C%9C%E9%85%92.mp4" type="video/mp4">
+</video>
+<p><strong>视频生成提示词</strong></p>
+<p>儿童绘本卡通风格，4 头身比例，柔和的故事书插画风。敞开的窗边极度特写，暖金橙色光晕中可见窗外深蓝夜空。鲁恩修长的手指从画面底部入镜，指尖轻触放在木质窗台上的一片卷成兜状的绿叶里的发光金色液体。叶子从内部透出金光，透过半透明绿色叶脉闪烁。一滴金色液体沾在指尖上，如液态星光般闪烁。手指缓缓升起移向嘴唇。指尖的金色液滴在靠近嘴巴时越来越亮。月光和烛光在窗框周围柔和交融。温暖、魔法、亲密的氛围，不恐怖，适合幼儿。16:9 比例。</p>
+<p><strong>台词</strong></p>
+<p><code>Rune lifted the glowing leaf pouch and drank. The golden mead tasted of honey, starlight, and forgotten stories.</code></p>
+<hr />
+<h2 id="-21">镜头 21</h2>
+<p><strong>分镜名称：</strong> 灵感爆发</p>
+<p><strong>参考素材</strong></p>
+<p>参考图 1</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B421/%E5%9C%BA%E6%99%AF%E5%9B%BE.png" alt="场景图.png" /></p>
+<p><strong>生成成片</strong></p>
+<video controls preload="metadata" width="480">
+  <source src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E9%95%9C%E5%A4%B421-%E7%BB%88%E7%AB%A0.mp4" type="video/mp4">
+</video>
+<p><strong>视频生成提示词</strong></p>
+<p>儿童绘本卡通风格，4 头身比例，柔和的故事书插画风。一个瘦削的年轻男性诗人，灰绿色眼睛发出明亮的金光，充满突如其来的灵感和喜悦。继续喝完叶兜里剩下的液体，然后双臂向身体两侧大大张开，手指展开，身体微微后仰，仿佛被突如其来的灵感击中。特写镜头，显示角色上半身，嘴巴张开说话，嘴型与台词同步。眼睛睁大，笑容灿烂，眼角有泪光闪烁。金色光点在头部和肩膀周围旋转飘浮。背景完全虚化，暖金橙色光晕。</p>
+<p><strong>台词</strong></p>
+<p><code>I can hear them! The wind, the rivers, the trees — they are all singing! Every poem carries a tiny spark of Kvasir's golden mead.</code></p>
+<hr />
+<h2 id="-22">镜头 22</h2>
+<p><strong>分镜名称：</strong> 写下新的故事</p>
+<p><strong>参考素材</strong></p>
+<p>参考图 1</p>
+<p><img src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B422/%E5%9C%BA%E6%99%AF.png" alt="场景.png" /></p>
+<p><strong>生成成片</strong></p>
+<video controls preload="metadata" width="480">
+  <source src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E9%95%9C%E5%A4%B422-%E7%BB%93%E5%B0%BE.mp4" type="video/mp4">
+</video>
+<p><strong>视频生成提示词</strong></p>
+<p>儿童绘本卡通风格，4 头身比例，柔和的故事书插画风。夜晚小木屋内中景。一个年轻男性诗人坐在窗边木桌前，烛光在桌上摇曳。角色灰绿色眼睛闪烁金光，身体前倾，表情兴奋，左手按住笔记本，右手握羽毛笔飞速书写，纸上文字发出微弱金色光芒。温暖金色光点从笔记本飘起。桌面散落纸张、打开的墨水瓶和烛台。窗外深蓝夜空点缀星星。镜头缓慢拉远。画面从边缘温柔渐暗，中央以暖金色手写体浮现 <code>The End</code>。魔法感、暖心、宁静收尾，适合幼儿。16:9 比例。</p>
+<p><strong>台词</strong></p>
+<p><code>Rune rushed to his desk. Kvasir's wisdom gave him endless inspiration.</code></p>
+<hr />
+<h2 id="heading-2">最终成片</h2>
+<p>后面这类文档里，最终成片统一命名为 <code>完整成片.mp4</code>，这样文档引用会稳定很多，也方便后续直接复用模板。</p>
+<p><strong>成片预览：</strong></p>
+<video controls preload="metadata" width="640">
+  <source src="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E5%AE%8C%E6%95%B4%E6%88%90%E7%89%87.mp4" type="video/mp4">
+</video>
+<h2 id="heading-3">这次的阶段性结论</h2>
+<p>如果说“刻舟求剑”更像是在练习如何把寓言讲清楚，那这次的“克瓦希尔”更像是在练习如何把一个神话设定转译成儿童故事。</p>
+<p>我觉得这次最有价值的，不只是做出了一个完整视频，而是逐渐摸清了几件事：</p>
+<ol>
+<li>什么样的神话题材适合“柔化改编”。</li>
+<li>角色统一和场景统一在连续叙事里到底有多重要。</li>
+<li>有些动作不适合硬生生让模型一次生成，拆镜头反而更稳。</li>
+<li>当故事本身比较沉重时，加入新的承接角色，往往能把整个片子的情绪重新托起来。</li>
+</ol>
+<p>后面如果继续做北欧神话系列，我会更想优先把这几个问题继续打磨：</p>
+<ol>
+<li>给主角和核心配角建立更标准化的人设卡。</li>
+<li>每个关键场景都留出专门的“统一场景图 + 尾帧参考图”。</li>
+<li>把中后期的后期环节也记录下来，比如字幕、配音、BGM、音效、镜头裁剪和承接方式。</li>
+</ol>
+<p>这样下一篇创作记录就不只是“我做了什么”，而会更接近一份真正可以反复复用的方法文档。</p>
+]]></description>
+      <category>AI视频</category>
+      <category>创作记录</category>
+      <enclosure url="https://obsidian-1256616663.cos.ap-chengdu.myqcloud.com/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D-%E5%85%8B%E7%93%A6%E5%B8%8C%E5%B0%94/%E8%B5%84%E6%BA%90/%E9%95%9C%E5%A4%B40/%E8%8D%89%E5%9C%B0.png" length="0" type="image/png"></enclosure>
+    </item>
     <item>
       <title>刻舟求剑 AI视频创作记录</title>
       <link>https://zylikedream.github.io/post/ke-zhou-qiu-jian-ai-shi-pin-chuang-zuo-ji-lu/</link>
